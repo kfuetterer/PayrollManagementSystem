@@ -1,11 +1,19 @@
 import React from "react";
 import { Route, IndexRoute, Router, browserHistory } from "react-router";
 
-import Main from "../components/Main";
+import Container from "../components/Container";
+import Home from "../components/Home";
+import Login from "../components/Login";
 
 const routes = (
   <Router history={browserHistory}>
-    <Route path="/" component={Main} />
+    <HomeRoute path='/' component={MasterPage}>
+      <IndexRoute component={IndexPage} />
+      <LoginRoute path='/login' component={LoginPage} />
+      <AuthenticatedRoute>
+        <Route path='/profile' component={ProfilePage} />
+      </AuthenticatedRoute>
+    </HomeRoute>
   </Router>
 );
 

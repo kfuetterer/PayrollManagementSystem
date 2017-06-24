@@ -1,19 +1,17 @@
 import axios from "axios";
 
 const API = {
-  getQuotes: function() {
-    return axios.get("/api/quotes");
+  getSchedule: function() {
+    return axios.get("/api/schedule");
   },
-  saveQuote: function(text) {
-    return axios.post("/api/quotes", { text });
+  getCompany: function() {
+    return axios.get("/api/company")
   },
-  deleteQuote: function(id) {
-    return axios.delete(`/api/quotes/${id}`);
+  saveTimeOffSegment: function(text) {
+    return axios.post("/api/timeoffsegment", { text });
   },
-  favoriteQuote: function(quote) {
-    quote.favorited = !quote.favorited;
-    const { _id, favorited } = quote;
-    return axios.patch(`/api/quotes/${_id}`, { favorited });
+  saveWorkSegment: function(id) {
+    return axios.delete(`/api/worksegment/${id}`);
   }
 };
 
