@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from "react";
 import { Link } from 'react-router';
 
 import { LoginLink, LogoutLink, NotAuthenticated, Authenticated } from 'react-stormpath';
 
-export default class Header extends React.Component {
+class Header extends Component {
   render() {
     return (
       <nav className="navbar navbar-default navbar-static-top">

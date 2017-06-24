@@ -1,4 +1,5 @@
 var Payrollcycle = require("../models/payrollcycle");
+var db = require("../models");
 
 module.exports = {
   index: function(req, res) {
@@ -9,7 +10,7 @@ module.exports = {
     else {
       query = req.params.id ? { _id: req.params.id } : {};
     }
-    Payrollcycle.find(query)
+    db.Payrollcycle.find(query)
       .then(function(doc) {
         res.json(doc);
       }).catch(function(err) {

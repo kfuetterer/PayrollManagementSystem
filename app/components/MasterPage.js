@@ -1,19 +1,17 @@
 import { Link } from 'react-router';
-import React, { PropTypes } from 'react';
+import React from "react";
 import DocumentTitle from 'react-document-title';
 
 import Header from './Header';
 import { LoginLink } from 'react-stormpath';
 
-export default class MasterPage extends React.Component {
-  render () {
-    <DocumentTitle title='Stormpath Express + React Example'>
+const MasterPage = props => (
+    <DocumentTitle title='Stormpath Express'>
           <div className='MasterPage'>
-            <Header />
-            { this.props.children }
+              <Header />
+              { props.children }
           </div>
     </DocumentTitle>
-  }
-};
+);
 
 export default MasterPage;

@@ -1,4 +1,5 @@
 var Schedule = require("../models/schedule");
+var db = require("../models");
 
 module.exports = {
   index: function(req, res) {
@@ -9,7 +10,7 @@ module.exports = {
     else {
       query = req.params.id ? { _id: req.params.id } : {};
     }
-    Schedule.find(query)
+    db.Schedule.find(query)
       .then(function(doc) {
         res.json(doc);
       }).catch(function(err) {

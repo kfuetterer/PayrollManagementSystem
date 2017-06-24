@@ -1,4 +1,5 @@
 var Employee = require("../models/employee");
+var db = require("../models");
 
 module.exports = {
   index: function(req, res) {
@@ -9,7 +10,7 @@ module.exports = {
     else {
       query = req.params.id ? { _id: req.params.id } : {};
     }
-    Employee.find(query)
+    db.Employee.find(query)
       .then(function(doc) {
         res.json(doc);
       }).catch(function(err) {
@@ -17,7 +18,7 @@ module.exports = {
       });
   },
   create: function(req, res) {
-    Employee.create(req.body).then(function(doc) {
+    db.Employee.create(req.body).then(function(doc) {
       res.json(doc);
     }).catch(function(err) {
       res.json(err);

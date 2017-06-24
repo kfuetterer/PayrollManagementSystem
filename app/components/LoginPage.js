@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from "react";
 import DocumentTitle from 'react-document-title';
 import { LoginForm } from 'react-stormpath';
  
-export default class LoginPage extends React.Component {
+class LoginPage extends Component {
   render() {
     return (
       <DocumentTitle title={`Login`}>
@@ -19,3 +19,5 @@ export default class LoginPage extends React.Component {
     );
   }
 }
+
+export default LoginPage;

@@ -1,4 +1,5 @@
 var Worksegment = require("../models/worksegment");
+var db = require("../models");
 
 module.exports = {
   index: function(req, res) {
@@ -9,7 +10,7 @@ module.exports = {
     else {
       query = req.params.id ? { _id: req.params.id } : {};
     }
-    Worksegment.find(query)
+    db.Worksegment.find(query)
       .then(function(doc) {
         res.json(doc);
       }).catch(function(err) {
@@ -17,14 +18,14 @@ module.exports = {
       });
   },
   create: function(req, res) {
-    Worksegment.create(req.body).then(function(doc) {
+    db.Worksegment.create(req.body).then(function(doc) {
       res.json(doc);
     }).catch(function(err) {
       res.json(err);
     });
   },
   update: function(req, res) {
-    Worksegment.update({
+    db.Worksegment.update({
       _id: req.params.id
     },
       req.body

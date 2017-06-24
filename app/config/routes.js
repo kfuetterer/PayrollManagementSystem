@@ -1,9 +1,13 @@
-import React from "react";
-import { Route, IndexRoute, Router, browserHistory } from "react-router";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { IndexRoute, Route, browserHistory } from 'react-router';
+import ReactStormpath, { Router, HomeRoute, LoginRoute, AuthenticatedRoute } from 'react-stormpath';
+import { MasterPage } from '../components/MasterPage';
+import { IndexPage } from "../components/IndexPage";
+import { LoginPage } from "../components/LoginPage";
+import { ProfilePage } from "../components/ProfilePage";
 
-import Container from "../components/Container";
-import Home from "../components/Home";
-import Login from "../components/Login";
+ReactStormpath.init();
 
 const routes = (
   <Router history={browserHistory}>

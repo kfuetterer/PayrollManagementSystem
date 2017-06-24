@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from "react";
 import DocumentTitle from 'react-document-title';
  
-export default class ProfilePage extends React.Component {
+class ProfilePage extends Component {
   render() {
     return (
       <DocumentTitle title={`My Profile`}>
@@ -20,4 +20,6 @@ export default class ProfilePage extends React.Component {
       </DocumentTitle>
     );
   }
-}
+};
+
+export default ProfilePage;
