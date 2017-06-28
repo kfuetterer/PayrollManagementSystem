@@ -8,7 +8,7 @@ module.exports = {
       query = req.query;
     }
     else {
-      query = req.params.id ? { _id: req.params.id } : {};
+      query = req.params.id ? { id: req.params.id } : {};
     }
     db.Timeoffsegment.find(query)
       .then(function(doc) {

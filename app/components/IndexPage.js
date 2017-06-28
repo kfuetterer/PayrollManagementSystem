@@ -7,7 +7,7 @@ class IndexPage extends Component {
     constructor() {
         super();
         this.state = {
-            user: "some value" // React.PropTypes.object
+            user: React.PropTypes.object
         };
     }
     render() {

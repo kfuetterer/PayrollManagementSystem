@@ -8,7 +8,7 @@ module.exports = {
       query = req.query;
     }
     else {
-      query = req.params.id ? { _id: req.params.id } : {};
+      query = req.params.id ? { id: req.params.id } : {};
     }
     db.Worksegment.find(query)
       .then(function(doc) {
@@ -26,7 +26,7 @@ module.exports = {
   },
   update: function(req, res) {
     db.Worksegment.update({
-      _id: req.params.id
+      id: req.params.id
     },
       req.body
     ).then(function(doc) {

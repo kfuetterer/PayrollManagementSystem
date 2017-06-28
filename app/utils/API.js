@@ -7,9 +7,6 @@ const API = {
   getEmployee: function() {
     return axios.get("/api/employee");
   },
-  saveEmployee: function(id) {
-    return axios.post('/api/employee/${id}');
-  },
   getPayrollcycle: function() {
     return axios.get("/api/payrollcycle");
   },
