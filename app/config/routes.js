@@ -1,23 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { IndexRoute, Route, browserHistory } from 'react-router';
-import ReactStormpath, { Router, HomeRoute, LoginRoute, AuthenticatedRoute } from 'react-stormpath';
-import { MasterPage } from '../components/MasterPage';
-import { IndexPage } from "../components/IndexPage";
-import { LoginPage } from "../components/LoginPage";
-import { ProfilePage } from "../components/ProfilePage";
-
-ReactStormpath.init();
+import { IndexRoute, Route, browserHistory, Router } from 'react-router';
+import MasterPage from '../components/MasterPage';
+import LoginPage from "../components/LoginPage";
+import ProfilePage from "../components/ProfilePage";
+import SignUp from "../components/SignUp";
 
 const routes = (
   <Router history={browserHistory}>
-    <HomeRoute path='/' component={MasterPage}>
-      <IndexRoute component={IndexPage} />
-      <LoginRoute path='/login' component={LoginPage} />
-      <AuthenticatedRoute>
-        <Route path='/profile' component={ProfilePage} />
-      </AuthenticatedRoute>
-    </HomeRoute>
+    <Route path='/' component={MasterPage}>
+      <IndexRoute component={LoginPage} />
+      <Route path='signup' component={SignUp} />
+      <Route path='profile' component={ProfilePage} />
+    </Route>
   </Router>
 );
 

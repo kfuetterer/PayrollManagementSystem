@@ -1,0 +1,32 @@
+.navbar-fixed {
+  height: 150px
+}
+
+material-icons {
+  font-size: 60px
+}
+
+#clockin_border {
+  border:1px solid lightslategray;  
+  padding-top: 20px;
+}
+
+#schedule_border {
+  border:1px solid lightslategray;  
+  padding-top: 20px;
+}
+
+#timestamp_border {
+  border:1px solid lightslategray;  
+  padding-top: 20px;
+}
+
+#timeoffform_border {
+  border:1px solid lightslategray;  
+  padding-top: 20px;
+}
+
+#timeoffsegment_border {
+  border:1px solid lightslategray;  
+  padding-top: 20px;
+}

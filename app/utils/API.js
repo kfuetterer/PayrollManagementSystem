@@ -4,6 +4,15 @@ const API = {
   getApproval: function() {
     return axios.get("/api/approval");
   },
+  signIn: function() {
+    return axios.post("/signin");
+  },
+  signUp: function() {
+    return axios.post("/signup");
+  },
+  signOut: function() {
+    return axios.post("/signout");
+  },
   getEmployee: function() {
     return axios.get("/api/employee");
   },

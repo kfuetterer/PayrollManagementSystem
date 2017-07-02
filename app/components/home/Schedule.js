@@ -4,12 +4,10 @@ import React, { Component } from "react";
 class Schedule extends React.Component {
   render() {
     return (
-      <div className="col-md-6">
-        <table>
-          <tr>
-            {this.props.schedule.hours}
-          </tr>
-        </table>
+      <div className="col s12">
+        <div className="container">
+            Schedule
+        </div>
       </div>
     );
   }

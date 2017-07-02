@@ -4,9 +4,9 @@ import React, { Component } from "react";
 class TimeOffSegment extends React.Component {
   render() {
     return (
-      <div className="col-md-6">
-        {this.props.timeoffsegment}
-      </div>
+        <div className="col s12">
+
+        </div>
     );
   }
 };

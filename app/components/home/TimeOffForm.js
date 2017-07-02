@@ -9,23 +9,15 @@ class TimeOffForm extends React.Component {
       end_date: "",
       hoursperday: "",
       notes: "",
-      include_weekend: "",
-      include_holidays: "",
+      include_weekend: false,
+      include_holidays: false,
       approved: ""
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleButtonClick = this.handleButtonClick.bind(this);
   }
-  handleInputChange(event) {
-    this.setState({ 
-      start_date: event.target.value,
-      end_date: event.target.value,
-      hoursperday: event.target.value,
-      notes: event.target.value,
-      include_weekend: event.target.value,
-      include_holidays: event.target.value,
-      approved: event.target.value
-    })
+  handleInputChange (e) {
+    this.setState({[e.target.name]: e.target.value});
   }
   handleButtonClick() {
     const newTimeOffSegment = {
@@ -41,36 +33,62 @@ class TimeOffForm extends React.Component {
   }
   render() {
     return (
-      <div className="col-md-6">
-        <div className="form-group">
-        <input
-          onChange={this.handleInputChange}
-          value={this.state.start_date}
-        />
-        <input
-          onChange={this.handleInputChange}
-          value={this.state.end_date}
-        />
-        <input
-          onChange={this.handleInputChange}
-          value={this.state.hoursperday}
-        />
-        <input
-          onChange={this.handleInputChange}
-          value={this.state.notes}
-        />
-        <input
-          onChange={this.handleInputChange}
-          value={this.state.include_weekend}
-        />
-        <input
-          onChange={this.handleInputChange}
-          value={this.state.include_holidays}
-        />
-        <button
-          onClick={this.handleButtonClick}
-          className="btn btn-success"
-        >Submit</button>
+      <div className="container">
+        <div className="row">
+          <div className="col s12">
+            <div className="form-group">
+              <label>Start Date</label>
+              <input
+                  type="date" className="datepicker"
+                  name="start_date"
+                  onChange={this.handleInputChange}
+                  value={this.state.start_date}
+              />
+              <label>End Date</label><br />
+              <input
+                type="date" class="datepicker"
+                name="end_date"
+                onChange={this.handleInputChange}
+                value={this.state.end_date}
+              />
+              <label>Hours Per Day</label><br />
+              <input
+                name="hoursperday"
+                onChange={this.handleInputChange}
+                value={this.state.hoursperday}
+              />
+              <label>Notes</label><br />
+              <textarea
+                name="notes"
+                className="materialize-textarea"
+                onChange={this.handleInputChange}
+                value={this.state.notes}
+              />
+              <br />
+              <input
+                name="include_weekend"
+                type="checkbox" id="include_weekend"
+                onChange={this.handleInputChange}
+                value={this.state.include_weekend}
+              />
+              <label for="include_weekend">Include Weekend</label>
+              <br />
+              <input
+                name="include_holidays"
+                type="checkbox" id="include_holidays"
+                onChange={this.handleInputChange}
+                value={this.state.include_holidays}
+              />
+              <label for="include_holidays">Inlude Holidays</label>
+              <br />
+              <br />
+              <button 
+                onClick={this.handleButtonClick}
+                className="btn btn-success light-blue accent-2 btn waves-effect waves-light" type="submit" name="action">Submit
+                <i className="material-icons right">send</i>
+              </button>
+            </div>
+        </div>
       </div>
     </div>
     );

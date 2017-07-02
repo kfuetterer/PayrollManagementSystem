@@ -1,17 +1,18 @@
 import React, { Component } from "react";
-import DocumentTitle from 'react-document-title';
 import ClockIn from "./home/ClockIn";
 import Schedule from "./home/Schedule";
 import TimeOffSegment from "./home/TimeOffSegment";
 import TimeOffForm from "./home/TimeOffForm";
 import TimeStamp from "./home/TimeStamp";
 import API from "../utils/API";
+import LoginPage from "./LoginPage";
 
 class ProfilePage extends Component {
     constructor() {
         super();
         this.state = {
-            user: "", // React.PropTypes.object
+            email: "",
+            password: "",
             schedule: [],
             timeoffsegment: [],
             timestamp: []
@@ -24,6 +25,11 @@ class ProfilePage extends Component {
         this.getSchedule();
         this.getTimeOffSegment();
         this.getTimeStamp();
+    }
+    signOut() {
+      API.signOut().then((res) => {
+        this.setState({ email: "", password: "" });
+      })
     }
     getSchedule() {
         API.getSchedule().then((res) => {
@@ -76,34 +82,39 @@ class ProfilePage extends Component {
     }
   render() {
     return (
-      <DocumentTitle title={`My Profile`}>
         <div className="container">
           <div className="row">
-            <div className="col-md-6">
-              {this.renderClockIn()}
+            <div id="clockin_border" className="col s4">
+              <ClockIn
+              />
             </div>
-            <div className="col-md-6">
-              {this.renderSchedule()}
+            <div id="schedule_border" className="col s8">
+              <Schedule 
+                getSchedule={this.getSchedule}
+              />
             </div>
           </div>
-          <div classNAme="row">
-            <div className="col-md-12">
-              {this.renderTimeStamp()}
+          <div id="timestamp_border" className="row">
+            <div className="col s12">
+              <TimeStamp 
+                getTimestamp={this.getTimestamp}
+              />
             </div>
           </div>
           <div className="row">
-            <div className="col-md-6">
+            <div id="timeoffform_border" className="col s6">
               <TimeOffForm
                 getTimeOffSegment={this.getTimeOffSegment}
               />
             </div>
-            <div className="col-md-6">
+            <div id="timeoffsegment_border" className="col s6">
               <hr />
-              {this.renderTimeOffSegment()}
+              <TimeOffSegment 
+                getTimeOffSegment={this.getTimeOffSegment}
+              />
             </div>
           </div>
         </div>
-      </DocumentTitle>
     );
   }
 };

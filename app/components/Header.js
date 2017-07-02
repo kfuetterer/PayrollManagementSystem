@@ -1,43 +1,39 @@
 import React, { Component } from "react";
 import { Link } from 'react-router';
 
-import { LoginLink, LogoutLink, NotAuthenticated, Authenticated } from 'react-stormpath';
-
 class Header extends Component {
+  constructor() {
+    super();
+    console.log("Header");
+  }
+  signOut() {
+      API.signOut().then((res) => {
+        this.setState({ email: "", password: "" });
+      })
+    }
   render() {
     return (
-      <nav className="navbar navbar-default navbar-static-top">
-        <div className="container">
-          <div className="navbar-header">
-            <button type="button" data-toggle="collapse" data-target="#navbar-collapse" className="navbar-toggle collapsed">
-              <span className="sr-only">Toggle Navigation</span>
-              <span className="icon-bar"></span><span className="icon-bar"></span><span className="icon-bar"></span>
-            </button>
-          </div>
-          <div id="navbar-collapse" className="collapse navbar-collapse">
-            <ul className="nav navbar-nav">
-              <li><Link to="/" activeClassName="active" onlyActiveOnIndex={true}>Home</Link></li>
-              <Authenticated>
-                <li>
-                  <Link to="/profile" activeClassName="active">Profile</Link>
-                </li>
-              </Authenticated>
-            </ul>
-            <ul className="nav navbar-nav navbar-right">
-              <NotAuthenticated>
-                <li>
-                  <LoginLink activeClassName="active" />
-                </li>
-              </NotAuthenticated>
-              <Authenticated>
-                <li>
-                  <LogoutLink />
-                </li>
-              </Authenticated>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      <div className="navbar-fixed">
+        <nav className="nav-wrapper light-blue accent-2"><a className="brand-logo"><i className="large material-icons left">nbsp business</i> Busy Day</a>
+              <ul className="right hide-on-med-and-down">
+                <li><Link to="/" activeClassName="active" onlyActiveOnIndex={true}>Home</Link></li>
+                  <li>
+                    <Link to="/signup" activeClassName="active">Sign Up</Link>
+                  </li>
+                  <li>
+                    <Link to="/profile" activeClassName="active">Profile</Link>
+                  </li>
+                  <li>
+                    <Link to="/signout" activeClassName="active">Sign Out</Link>
+                  </li>
+                  <li>
+                    {/*<Link to="/logout" activeClassName="active">Logout</Link>*/}
+                  </li>
+              </ul>
+        </nav>
+      </div>
     );
   }
 }
+
+export default Header;
