@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import React, { Component } from "react";
+import API from "../../utils/API";
 
 class TimeOffForm extends React.Component {
   constructor() {
@@ -26,14 +27,14 @@ class TimeOffForm extends React.Component {
       hoursperday: this.state.hoursperday,
       notes: this.state.notes,
       include_weekend: this.state.include_weekend,
-      holidays: this.state.include_holidays,
+      include_holidays: this.state.include_holidays,
       approved: this.state.approved
     }
     API.saveTimeOffSegment(newTimeOffSegment).then(this.props.getTimeOffSegment)
   }
   render() {
     return (
-      <div className="container">
+      <div>
         <div className="row">
           <div className="col s12">
             <div className="form-group">
@@ -46,7 +47,7 @@ class TimeOffForm extends React.Component {
               />
               <label>End Date</label><br />
               <input
-                type="date" class="datepicker"
+                type="date" className="datepicker"
                 name="end_date"
                 onChange={this.handleInputChange}
                 value={this.state.end_date}
@@ -71,7 +72,7 @@ class TimeOffForm extends React.Component {
                 onChange={this.handleInputChange}
                 value={this.state.include_weekend}
               />
-              <label for="include_weekend">Include Weekend</label>
+              <label htmlFor="include_weekend">Include Weekend</label>
               <br />
               <input
                 name="include_holidays"
@@ -79,7 +80,7 @@ class TimeOffForm extends React.Component {
                 onChange={this.handleInputChange}
                 value={this.state.include_holidays}
               />
-              <label for="include_holidays">Inlude Holidays</label>
+              <label htmlFor="include_holidays">Inlude Holidays</label>
               <br />
               <br />
               <button 
@@ -88,9 +89,9 @@ class TimeOffForm extends React.Component {
                 <i className="material-icons right">send</i>
               </button>
             </div>
+          </div>
         </div>
       </div>
-    </div>
     );
   }
 };

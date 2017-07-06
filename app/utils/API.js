@@ -5,16 +5,19 @@ const API = {
     return axios.get("/api/approval");
   },
   signIn: function() {
-    return axios.post("/signin");
+    return axios.post("/api/signin");
   },
   signUp: function() {
-    return axios.post("/signup");
+    return axios.post("/api/signup");
   },
   signOut: function() {
-    return axios.post("/signout");
+    return axios.post("/api/signout");
   },
   getEmployee: function() {
     return axios.get("/api/employee");
+  },
+  saveEmployee: function(employee) {
+    return axios.get("/api/employee", {employee});
   },
   getPayrollcycle: function() {
     return axios.get("/api/payrollcycle");

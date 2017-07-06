@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import React, { Component } from "react";
+import API from "../../utils/API";
 
 class ClockIn extends React.Component {
   constructor() {
@@ -30,20 +31,20 @@ class ClockIn extends React.Component {
   }
   render() {
     return (
-      <div className="container">
+      <div>
         <div className="row">
           <div className="col s6">
             <div>
               <button onChange={this.handleInputChangeIn}
                 onClick={this.handleButtonClickIn}
-                className="btn btn-success light-blue accent-2 btn waves-effect waves-light" type="submit" name="action"
-              ><i className="large material-icons">query_builder</i> Clock In</button>
+                className="btn btn-success light-blue accent-2 waves-effect waves-light btn" type="submit" name="action"
+              ><i className="material-icons">query_builder</i> In</button>
               <br />
               <br />
               <button onChange={this.handleInputChangeOut}
                 onClick={this.handleButtonClickOut}
-                className="btn btn-success light-blue accent-2 btn waves-effect waves-light" type="submit" name="action"
-              ><i className="large material-icons">done</i> Clock Out</button>
+                className="btn btn-success light-blue accent-2 waves-effect waves-light btn" type="submit" name="action"
+              ><i className="material-icons">done</i> Out</button>
             </div>
           </div>
           <div className="col s6">

@@ -57,12 +57,43 @@ passport.use(function(req, res, next){
     next()
 });
 
-router.post("/signin/", passport.authenticate('local'), function(req, res) {
+router.post("/signup", function(req, res, next){
+    db.Employee.findOne({
+        where: {
+            email: req.body.email
+        }
+    }).then(function(user){
+        if(!user){
+        db.Employee.create({
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            street_address: req.body.street_address,
+            phone_number: req.body.phone_number,
+            email: req.body.email,
+            password: bCrypt.hashSync(req.body.password),
+            pay_type: req.body.pay_type,
+            pay_rate: req.body.pay_rate
+        }).then(function(user){
+            passport.authenticate("local", {failureRedirect:"/signup", successRedirect: "/profile"})(req, res, next)
+            return done(null, user);
+        })
+        } else {
+            res.send("user exists");
+        }
+    })
+});
+
+router.get("/signup", function(req, res){
+    console.log("Successfully signed up.");
+    res.redirect("/profile");
+});
+
+router.post("/signin", passport.authenticate('local'), function(req, res) {
     console.log("Succesfully signed in.");
     res.redirect("/profile");
 });
 
-router.get('/signout/', function(req, res){
+router.get('/signout', function(req, res){
   req.logout();
   res.redirect('/');
 });
@@ -70,7 +101,6 @@ router.get('/signout/', function(req, res){
 router.get("/approval/:id?", approvalController.index);
 
 router.get("/employee/:id?", employeeController.index);
-router.post("/employee", employeeController.create);
 
 router.get("/payrollcycle/:id?", payrollcycleController.index);
 

@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 class Header extends Component {
   constructor() {
     super();
-    console.log("Header");
   }
   signOut() {
       API.signOut().then((res) => {

@@ -3,7 +3,7 @@ import ClockIn from "./home/ClockIn";
 import Schedule from "./home/Schedule";
 import TimeOffSegment from "./home/TimeOffSegment";
 import TimeOffForm from "./home/TimeOffForm";
-import TimeStamp from "./home/TimeStamp";
+import WorkSegment from "./home/WorkSegment";
 import API from "../utils/API";
 import LoginPage from "./LoginPage";
 
@@ -15,16 +15,16 @@ class ProfilePage extends Component {
             password: "",
             schedule: [],
             timeoffsegment: [],
-            timestamp: []
+            worksegment: []
         };
         this.getSchedule = this.getSchedule.bind(this);
         this.getTimeOffSegment = this.getTimeOffSegment.bind(this);
-        this.getTimeStamp = this.getTimeStamp.bind(this);
+        this.getWorkSegment = this.getWorkSegment.bind(this);
     }
     componentDidMount() {
         this.getSchedule();
         this.getTimeOffSegment();
-        this.getTimeStamp();
+        this.getWorkSegment();
     }
     signOut() {
       API.signOut().then((res) => {
@@ -41,9 +41,9 @@ class ProfilePage extends Component {
           this.setState({ timeoffsegment: res });
         });
     }
-    getTimeStamp() {
-        API.getTimeStamp().then((res) => {
-          this.setState({ timestamp: res });
+    getWorkSegment() {
+        API.getWorkSegment().then((res) => {
+          this.setState({ worksegment: res });
         });
     }
     renderClockIn() {
@@ -71,12 +71,12 @@ class ProfilePage extends Component {
             />
         ));
     }
-    renderTimeStamp() {
-        return this.state.timestamp.map(timestamp => (
-            <TimeStamp
-              timestamp={timestamp}
-              key={timestamp.id}
-              getTimestamp={this.getTimestamp}
+    renderWorkSegment() {
+        return this.state.worksegment.map(worksegment => (
+            <WorkSegment
+              worksegment={worksegment}
+              key={worksegment.id}
+              getWorkSegment={this.getWorkSegment}
             />
         ));
     }
@@ -84,34 +84,64 @@ class ProfilePage extends Component {
     return (
         <div className="container">
           <div className="row">
-            <div id="clockin_border" className="col s4">
-              <ClockIn
-              />
+            <div className="col s4">
+              <div className="row">
+                <h5 className="blueHeader">Clock In/Out</h5>
+              </div>
+              <div className="row" id="clockin_border">
+                <div className="col s12">
+                  <ClockIn
+                  />
+                </div>
+              </div>
             </div>
-            <div id="schedule_border" className="col s8">
-              <Schedule 
-                getSchedule={this.getSchedule}
-              />
+            <div className="col s1">
             </div>
-          </div>
-          <div id="timestamp_border" className="row">
-            <div className="col s12">
-              <TimeStamp 
-                getTimestamp={this.getTimestamp}
-              />
+            <div className="col s7">
+              <div className="row">
+                <h5 className="blueHeader">Schedule</h5>
+              </div>
+              <div className="row" id="schedule_border">
+                <Schedule 
+                  getSchedule={this.getSchedule}
+                />
+              </div>
             </div>
           </div>
           <div className="row">
-            <div id="timeoffform_border" className="col s6">
-              <TimeOffForm
-                getTimeOffSegment={this.getTimeOffSegment}
-              />
+            <div className="col s12">
+              <div className="row">
+                <h5 className="blueHeader">Hours Worked</h5>
+              </div>
+              <div className="row" id="worksegment_border">
+                <WorkSegment
+                  getWorkSegment={this.getWorkSegment}
+                />
+              </div>
             </div>
-            <div id="timeoffsegment_border" className="col s6">
-              <hr />
-              <TimeOffSegment 
-                getTimeOffSegment={this.getTimeOffSegment}
-              />
+          </div>
+          <div className="row">
+            <div className="col s5">
+              <div className="row">
+                <h5 className="blueHeader">Time Off Form</h5>
+              </div>
+              <div className="row" id="timeoffform_border">
+                <TimeOffForm
+                  getTimeOffSegment={this.getTimeOffSegment}
+                />
+              </div>
+            </div>
+            <div className="col s1">
+            </div>
+            <div className="col s6">
+              <div className="row">
+                <h5 className="blueHeader">Time Off Requests</h5>
+              </div>
+              <div className="row" id="timeoffsegment_border">
+                <TimeOffSegment 
+                  getTimeOffSegment={this.getTimeOffSegment}
+                />
+              </div>
             </div>
           </div>
         </div>
