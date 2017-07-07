@@ -28,7 +28,7 @@ module.exports = function(sequelize, DataTypes) {
         }
       }
     },
-    admin: { type: DataTypes.BOOLEAN, defaultValue: false },
+    admin: { type: DataTypes.BOOLEAN, defaultValue: false, allowNull: true },
     pay_type: { type: DataTypes.STRING, allowNull: false },
     pay_rate: { type: DataTypes.DECIMAL, allowNull: false },
   },

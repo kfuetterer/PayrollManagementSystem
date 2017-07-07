@@ -4,6 +4,7 @@ class LoginPage extends Component {
   constructor() {
     super();
     this.state = {
+      authenticated: false,
       email: "",
       password: ""
     };
@@ -27,6 +28,7 @@ class LoginPage extends Component {
       password: this.state.password
     }
     API.signIn(newUserLogin).then((res) => {
+      this.setState({authenticated: true});
       console.log(res);
     });
   }
@@ -34,9 +36,10 @@ class LoginPage extends Component {
     return (
         <div className="container">
           <div className="row">
-            <div className="col s6 offset-s3">
+            <div className="col s6 offset-s3" id="signin_border">
                 <div className="form-group">
                   <br />
+
                   <label htmlFor="email">Email</label><br />
                   <input
                     onChange={this.handleInputEmailChange}

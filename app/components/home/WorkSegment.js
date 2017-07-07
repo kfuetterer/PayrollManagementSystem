@@ -2,6 +2,18 @@ import { Link } from 'react-router';
 import React, { Component } from "react";
 
 class WorkSegment extends React.Component {
+  approved() {
+    if (this.props.worksegment.approved === true) {
+      return (
+        <i className="material-icons">done</i>
+      )
+    }
+    else if (this.props.worksegment.approved === false) {
+      return (
+        <i className="material-icons">not_interested</i>
+      )
+    }
+  }
   render() {
     return (
       <div>
@@ -18,27 +30,15 @@ class WorkSegment extends React.Component {
               </thead>
               <tbody>
                 <tr>
-                  <td><i className="material-icons">done</i></td>
-                  <td>8:45 AM</td>
-                  <td>9:45 AM</td>
-                  <td>1.00</td>
-                </tr>
-                <tr>
-                  <td><i className="material-icons">not_interested</i></td>
-                  <td>12:30 PM</td>
-                  <td>5:30 PM</td>
-                  <td>5.00</td>
-                </tr>
-                <tr>
-                  <td><i className="material-icons">not_interested</i></td>
-                  <td>8:30 AM</td>
-                  <td>9:00 PM</td>
-                  <td>7.00</td>
+                  {/*<td>{this.approved()}</td>*/}
+                  {/*<td>{this.props.worksegment.clock_in}</td>*/}
+                  {/*<td>{this.props.worksegment.clock_out}</td>*/}
+                  {/*<td>{this.props.worksegment.clock_out - this.props.worksegment.clock_in}</td>*/}
                 </tr>
               </tbody>
             </table>
             <p className="right-align">
-            Total Hours:
+              Total Hours:
             </p>
           </div>
         </div>

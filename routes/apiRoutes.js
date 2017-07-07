@@ -74,7 +74,7 @@ router.post("/signup", function(req, res, next){
             pay_type: req.body.pay_type,
             pay_rate: req.body.pay_rate
         }).then(function(user){
-            passport.authenticate("local", {failureRedirect:"/signup", successRedirect: "/profile"})(req, res, next)
+            passport.authenticate("local", {failureRedirect:"/signup", successRedirect: "/signup"})(req, res, next)
             return done(null, user);
         })
         } else {

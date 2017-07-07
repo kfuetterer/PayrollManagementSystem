@@ -4,6 +4,10 @@ import { Link } from 'react-router';
 class Header extends Component {
   constructor() {
     super();
+    this.state = {
+      email: "",
+      password: ""
+    }
   }
   signOut() {
       API.signOut().then((res) => {

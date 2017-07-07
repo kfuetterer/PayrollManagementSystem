@@ -36,7 +36,7 @@ class SignUp extends Component {
             password: this.state.password
         }
         API.signUp(newUser).then((res) => {
-            console.log(res);
+            API.signUP(newLogin).then();
         });
     }
     render() {
@@ -44,28 +44,33 @@ class SignUp extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col s6 offset-s3">
-                        <div className="form-group">
-                            <label htmlFor="first_name">First Name</label><br />
-                            <input type="text" value={this.state.first_name} name="first_name" onChange={this.handleInputChange} />
-                            <label htmlFor="last_name">Last Name</label><br />
-                            <input type="text" value={this.state.last_name} name="last_name" onChange={this.handleInputChange} />
-                            <label htmlFor="street_address">Street Address</label><br />
-                            <input type="text" value={this.state.street_address} name="street_address" onChange={this.handleInputChange} />
-                            <label htmlFor="phone_number">Phone Number</label><br />
-                            <input type="text" value={this.state.phone_number} name="phone_number" onChange={this.handleInputChange} />
-                            <label htmlFor="email">Email</label><br />
-                            <input type="text" value={this.state.email} name="email" onChange={this.handleInputChange} />
-                            <label htmlFor="password">Password</label><br />
-                            <input type="text" value={this.state.password} name="password" onChange={this.handleInputChange} />
-                            <label htmlFor="pay_type">Pay Type</label><br />
-                            <input type="text" value={this.state.pay_type} name="pay_type" onChange={this.handleInputChange} />
-                            <label htmlFor="pay_rate">Pay Rate</label><br />
-                            <input type="text" value={this.state.pay_rate} name="pay_rate" onChange={this.handleInputChange} />
-                            <button
-                                onClick={this.handleButtonClick}
-                                className="btn btn-success light-blue accent-2 btn waves-effect waves-light" type="submit" name="action">Submit
-                                <i className="material-icons right">send</i>
-                            </button>
+                        <div className="row">
+                            <h5 className="blueHeader z-depth-3">Sign Up</h5>
+                        </div>
+                        <div className="row" id="signup_border">
+                            <div className="form-group">
+                                <label htmlFor="first_name">First Name</label><br />
+                                <input type="text" value={this.state.first_name} name="first_name" onChange={this.handleInputChange} />
+                                <label htmlFor="last_name">Last Name</label><br />
+                                <input type="text" value={this.state.last_name} name="last_name" onChange={this.handleInputChange} />
+                                <label htmlFor="street_address">Street Address</label><br />
+                                <input type="text" value={this.state.street_address} name="street_address" onChange={this.handleInputChange} />
+                                <label htmlFor="phone_number">Phone Number</label><br />
+                                <input type="text" value={this.state.phone_number} name="phone_number" onChange={this.handleInputChange} />
+                                <label htmlFor="email">Email</label><br />
+                                <input type="text" value={this.state.email} name="email" onChange={this.handleInputChange} />
+                                <label htmlFor="password">Password</label><br />
+                                <input type="text" value={this.state.password} name="password" onChange={this.handleInputChange} />
+                                <label htmlFor="pay_type">Pay Type</label><br />
+                                <input type="text" value={this.state.pay_type} name="pay_type" onChange={this.handleInputChange} />
+                                <label htmlFor="pay_rate">Pay Rate</label><br />
+                                <input type="text" value={this.state.pay_rate} name="pay_rate" onChange={this.handleInputChange} />
+                                <button
+                                    onClick={this.handleButtonClick}
+                                    className="btn btn-success light-blue accent-2 btn waves-effect waves-light" type="submit" name="action">Submit
+                                    <i className="material-icons right">send</i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
