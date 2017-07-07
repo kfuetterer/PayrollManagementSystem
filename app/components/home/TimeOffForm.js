@@ -17,6 +17,12 @@ class TimeOffForm extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleButtonClick = this.handleButtonClick.bind(this);
   }
+  componentDidMount () {
+    $('.datepicker').pickadate({
+      selectMonths: true,
+      selectYears: 15
+    });
+  }
   handleInputChange (e) {
     this.setState({[e.target.name]: e.target.value});
   }

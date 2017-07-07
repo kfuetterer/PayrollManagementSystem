@@ -1,3 +1,7 @@
+a, h1, h2, h3, h4, h5, p, button {
+  font-family: 'Trirong', serif;
+}
+
 .navbar-fixed {
   height: 150px
 }
@@ -16,7 +20,7 @@ material-icons {
   padding: 20px;
 }
 
-#timestamp_border {
+#worksegment_border {
   border:1px solid lightslategray;  
   padding: 20px;
 }
@@ -39,5 +43,17 @@ material-icons {
 }
 
 .textBlue {
+  color: #40c4ff;
+}
+
+.picker__date-display, .picker__weekday-display{
+  background-color: #40c4ff;
+}
+
+div.picker__day.picker__day--infocus.picker__day--selected.picker__day--highlighted {
+  background-color: #40c4ff;
+}
+
+button.picker__today, button.picker__close {
   color: #40c4ff;
 }

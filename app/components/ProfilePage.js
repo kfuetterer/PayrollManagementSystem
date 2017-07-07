@@ -86,7 +86,7 @@ class ProfilePage extends Component {
           <div className="row">
             <div className="col s4">
               <div className="row">
-                <h5 className="blueHeader">Clock In/Out</h5>
+                <h5 className="blueHeader z-depth-3">Clock In/Out</h5>
               </div>
               <div className="row" id="clockin_border">
                 <div className="col s12">
@@ -99,7 +99,7 @@ class ProfilePage extends Component {
             </div>
             <div className="col s7">
               <div className="row">
-                <h5 className="blueHeader">Schedule</h5>
+                <h5 className="blueHeader z-depth-3">Schedule</h5>
               </div>
               <div className="row" id="schedule_border">
                 <Schedule 
@@ -111,7 +111,7 @@ class ProfilePage extends Component {
           <div className="row">
             <div className="col s12">
               <div className="row">
-                <h5 className="blueHeader">Hours Worked</h5>
+                <h5 className="blueHeader z-depth-3">Hours Worked</h5>
               </div>
               <div className="row" id="worksegment_border">
                 <WorkSegment
@@ -123,7 +123,7 @@ class ProfilePage extends Component {
           <div className="row">
             <div className="col s5">
               <div className="row">
-                <h5 className="blueHeader">Time Off Form</h5>
+                <h5 className="blueHeader z-depth-3">Time Off Form</h5>
               </div>
               <div className="row" id="timeoffform_border">
                 <TimeOffForm
@@ -135,10 +135,10 @@ class ProfilePage extends Component {
             </div>
             <div className="col s6">
               <div className="row">
-                <h5 className="blueHeader">Time Off Requests</h5>
+                <h5 className="blueHeader z-depth-3">Time Off Requests</h5>
               </div>
               <div className="row" id="timeoffsegment_border">
-                <TimeOffSegment 
+                <TimeOffSegment
                   getTimeOffSegment={this.getTimeOffSegment}
                 />
               </div>
