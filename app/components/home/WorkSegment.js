@@ -19,6 +19,11 @@ class WorkSegment extends React.Component {
       <div>
         <div className="row">
           <div className="col s12">
+            <div className="horizontal" id="payrollcycle">
+              <a className="btn-floating blue"><i className="material-icons">skip_previous</i></a>
+              <h5>Current Payroll Cycle</h5>
+              <a className="btn-floating blue"><i className="material-icons">skip_next</i></a>
+            </div>
             <table className="striped">
               <thead>
                 <tr>

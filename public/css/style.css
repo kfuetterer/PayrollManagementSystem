@@ -85,6 +85,10 @@ button.picker__today, button.picker__close {
   border: none;
 }
 
+#payrollcycle {
+  text-align: center;
+}
+
 /* Styling for each event from Schedule */
 .fc-time-grid-event.fc-v-event.fc-event {
   border-radius: 4px;
