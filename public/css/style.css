@@ -80,6 +80,15 @@ button.picker__today, button.picker__close {
   color: #40c4ff;
 }
 
+h2 {
+  text-align: center;
+  font-size: 30px;
+}
+
+td {
+  text-align: center;
+}
+
 #payrollcycle {
   text-align: center;
 }

@@ -3,11 +3,11 @@ import React, { Component } from "react";
 
 class TimeOffSegment extends React.Component {
   componentDidMount() {
-      $('#calendar').fullCalendar({
+      $('#calendar1').fullCalendar({
         editable: false,
         handleWindowResize: true,
         weekends: true,
-        defaultView: 'agendaWeek',
+        defaultView: 'month',
         header: {
           left: 'prev,next today',
           center: 'title',
@@ -25,7 +25,7 @@ class TimeOffSegment extends React.Component {
       <div>
         <div className="row">
           <div className="col s12">
-            <div id='calendar'></div>
+            <div id='calendar1'></div>
           </div>
         </div>
       </div>

@@ -2,11 +2,30 @@ import { Link } from 'react-router';
 import React, { Component } from "react";
 
 class Schedule extends React.Component {
+    componentDidMount() {
+      $('#calendar2').fullCalendar({
+        editable: false,
+        handleWindowResize: true,
+        weekends: true,
+        defaultView: 'agendaWeek',
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'month, agendaWeek,agendaDay,listWeek'
+        },
+        navLinks: true,
+        columnFormat: {
+            week: 'ddd'
+        },
+        displayEventTime: false
+    })
+  }
   render() {
     return (
     <div>
       <div className="row">
         <div className="col s12">
+          <div id="calendar2"></div>
           <table>
                 <thead>
                   <tr>
