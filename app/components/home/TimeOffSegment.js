@@ -1,16 +1,19 @@
-import { Link } from 'react-router';
+import { Link } from "react-router";
 import React, { Component } from "react";
 
 class TimeOffSegment extends React.Component {
   componentDidMount() {
-    $('#calendar').fullCalendar({
+      $('#calendar').fullCalendar({
         editable: false,
         handleWindowResize: true,
-        weekends: false,
+        weekends: true,
         defaultView: 'agendaWeek',
-        header: false,
-        minTime: '07:30:00',
-        maxTime: '22:00:00',
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'month, agendaWeek,agendaDay,listWeek'
+        },
+        navLinks: true,
         columnFormat: {
             week: 'ddd'
         },

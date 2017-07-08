@@ -36,7 +36,7 @@ class LoginPage extends Component {
     return (
         <div className="container">
           <div className="row">
-            <div className="col s6 offset-s3" id="signin_border">
+            <div className="col m6 s12 offset-m3" id="signin_border">
                 <div className="form-group">
                   <br />
 

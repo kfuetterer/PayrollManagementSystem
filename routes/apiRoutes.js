@@ -4,7 +4,6 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var bCrypt = require('bcrypt-nodejs');
 
-var approvalController = require("../controllers/approvalController");
 var employeeController = require("../controllers/employeeController");
 var payrollcycleController = require("../controllers/payrollcycleController");
 var scheduleController = require("../controllers/scheduleController");
@@ -20,11 +19,11 @@ router.use(require('express-session')({ secret: 'keyboard cat', resave: false, s
 router.use(passport.initialize());
 router.use(passport.session());
 
-passport.use(new LocalStrategy(function(email, pass, cb){
+passport.use('login', new LocalStrategy(function(username, pass, cb){
     var hashedPass = bCrypt.hashSync(pass)
     db.Employee.findOne({
         where: {
-            email: email
+            email: username
         }
         }).then(function(user, err){
             if (err) { 
@@ -50,9 +49,9 @@ passport.deserializeUser(function(id, cb) {
     });
 });
 
-passport.use(function(req, res, next){
+passport.use('login', function(req, res, next){
     if(req.user){
-        res.locals.user = req.user.email
+        res.locals.user = req.user.username
     }
     next()
 });
@@ -97,8 +96,6 @@ router.get('/signout', function(req, res){
   req.logout();
   res.redirect('/');
 });
-
-router.get("/approval/:id?", approvalController.index);
 
 router.get("/employee/:id?", employeeController.index);
 

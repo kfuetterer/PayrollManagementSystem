@@ -36,14 +36,17 @@ class SignUp extends Component {
             password: this.state.password
         }
         API.signUp(newUser).then((res) => {
-            API.signUP(newLogin).then();
+            console.log(res);
+        });
+        API.signUP(newLogin).then((res) => {
+            console.log(res);
         });
     }
     render() {
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col s6 offset-s3">
+                    <div className="col m6 s12 offset-m3">
                         <div className="row">
                             <h5 className="blueHeader z-depth-3">Sign Up</h5>
                         </div>
