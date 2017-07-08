@@ -80,6 +80,11 @@ button.picker__today, button.picker__close {
   color: #40c4ff;
 }
 
+.fc-month-button {
+  background-color: #40c4ff;
+  color: white;
+}
+
 h2 {
   text-align: center;
   font-size: 30px;

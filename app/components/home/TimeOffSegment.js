@@ -9,16 +9,23 @@ class TimeOffSegment extends React.Component {
         weekends: true,
         defaultView: 'month',
         header: {
-          left: 'prev,next today',
+          left: 'prev',
           center: 'title',
-          right: 'month, agendaWeek,agendaDay,listWeek'
+          right: 'next'
         },
         navLinks: true,
         columnFormat: {
             week: 'ddd'
         },
         displayEventTime: true
-    })
+    });
+    $('.fc-next-button').addClass("marginCSS floatclass");
+    $('.fc-prev-button').addClass("marginCSS floatclass");
+    $('.marginCSS').css("margin", "10px");
+    $('.floatclass').css("float", "left");
+
+    $('.fc-next-button').html("<a class='btn-floating btn light-blue accent-2 waves-effect waves-light'><i class='material-icons right'>skip_next</i></a>");
+    $('.fc-prev-button').html("<a class='btn-floating btn light-blue accent-2 waves-effect waves-light'><i class='material-icons right'>skip_previous</i></a>");
   }
   render() {
     return (

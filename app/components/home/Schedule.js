@@ -2,62 +2,51 @@ import { Link } from 'react-router';
 import React, { Component } from "react";
 
 class Schedule extends React.Component {
-    componentDidMount() {
+    constructor() {
+      super();
+      this.state = {
+        duration: "02:00",
+        minTime: "07:30:00"
+      }
+    }
+  componentDidMount() {
       $('#calendar2').fullCalendar({
         editable: false,
         handleWindowResize: true,
         weekends: true,
         defaultView: 'agendaWeek',
         header: {
-          left: 'prev,next today',
+          left: 'prev',
           center: 'title',
-          right: 'month, agendaWeek,agendaDay,listWeek'
+          right: 'next'
         },
-        navLinks: true,
+        eventColor: '#378006',
+        navLinks: false,
         columnFormat: {
             week: 'ddd'
         },
+        minTime: this.state.minTime,
+        defaultTimedEventDuration: this.state.duration,
         displayEventTime: false
-    })
+    });
+    $('.fc-next-button').addClass("marginCSS floatclass");
+    $('.fc-prev-button').addClass("marginCSS floatclass");
+    $('.marginCSS').css("margin", "10px");
+    $('.floatclass').css("float", "left");
+
+    $('.fc-next-button').html("<a class='btn-floating btn light-blue accent-2 waves-effect waves-light'><i class='material-icons right'>skip_next</i></a>");
+    $('.fc-prev-button').html("<a class='btn-floating btn light-blue accent-2 waves-effect waves-light'><i class='material-icons right'>skip_previous</i></a>");
   }
   render() {
     return (
     <div>
       <div className="row">
         <div className="col s12">
-          <div id="calendar2"></div>
-          <table>
-                <thead>
-                  <tr>
-                    <th>MON</th>
-                    <th>TUE</th>
-                    <th>WED</th>
-                    <th>THU</th>
-                    <th>FRI</th>
-                    <th className="textBlue">SAT</th>
-                    <th className="textBlue">SUN</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>8:45 AM</td>
-                    <td>9:45 AM</td>
-                    <td>12:30 PM</td>
-                    <td>5:30 PM</td>
-                    <td>12:30 PM</td>
-                  </tr>
-                  <tr>
-                    <td>12:30 PM</td>
-                    <td>12:30 PM</td>
-                    <td>5:30 PM</td>
-                    <td>12:30 PM</td>
-                    <td>5:30 PM</td>
-                  </tr>
-                </tbody>
-              </table>
+          <div id="calendar2">
           </div>
         </div>
       </div>
+    </div>
     );
   }
 };
