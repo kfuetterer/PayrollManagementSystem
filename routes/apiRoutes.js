@@ -19,11 +19,11 @@ router.use(require('express-session')({ secret: 'keyboard cat', resave: false, s
 router.use(passport.initialize());
 router.use(passport.session());
 
-passport.use('login', new LocalStrategy(function(username, pass, cb){
-    var hashedPass = bCrypt.hashSync(pass)
+passport.use(new LocalStrategy({usernameField:"email", passwordField:"password"}, function(email, password, cb){
+    var hashedPass = bCrypt.hashSync(password)
     db.Employee.findOne({
         where: {
-            email: username
+            email: email
         }
         }).then(function(user, err){
             if (err) { 
@@ -47,13 +47,6 @@ passport.deserializeUser(function(id, cb) {
     db.Employee.findById(id).then(function (user) {
         cb(null, user);
     });
-});
-
-passport.use('login', function(req, res, next){
-    if(req.user){
-        res.locals.user = req.user.username
-    }
-    next()
 });
 
 router.post("/signup", function(req, res, next){

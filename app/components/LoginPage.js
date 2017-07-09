@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import API from "../utils/API";
  
 class LoginPage extends Component {
   constructor() {
@@ -42,12 +43,15 @@ class LoginPage extends Component {
 
                   <label htmlFor="email">Email</label><br />
                   <input
+                    id="email"
                     onChange={this.handleInputEmailChange}
                     value={this.state.email}
                   />
                   <br />
                   <label htmlFor="password">Password</label><br />
                   <input
+                    type="password"
+                    id="password"
                     onChange={this.handleInputPasswordChange}
                     value={this.state.password}
                   />

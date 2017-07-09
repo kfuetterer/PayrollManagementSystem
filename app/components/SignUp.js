@@ -63,7 +63,7 @@ class SignUp extends Component {
                                 <label htmlFor="email">Email</label><br />
                                 <input type="text" value={this.state.email} name="email" onChange={this.handleInputChange} />
                                 <label htmlFor="password">Password</label><br />
-                                <input type="text" value={this.state.password} name="password" onChange={this.handleInputChange} />
+                                <input type="password" value={this.state.password} name="password" onChange={this.handleInputChange} />
                                 <label htmlFor="pay_type">Pay Type</label><br />
                                 <input type="text" value={this.state.pay_type} name="pay_type" onChange={this.handleInputChange} />
                                 <label htmlFor="pay_rate">Pay Rate</label><br />

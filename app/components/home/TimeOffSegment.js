@@ -17,15 +17,17 @@ class TimeOffSegment extends React.Component {
         columnFormat: {
             week: 'ddd'
         },
-        displayEventTime: true
+        displayEventTime: true,
+        eventColor: '#40c4ff',
+        aspectRatio: 1.2
     });
-    $('.fc-next-button').addClass("marginCSS floatclass");
-    $('.fc-prev-button').addClass("marginCSS floatclass");
+    $('.fc-next-button').addClass("marginCSS floatclass btn-floating btn light-blue accent-2 waves-effect waves-light");
+    $('.fc-prev-button').addClass("marginCSS floatclass btn-floating btn light-blue accent-2 waves-effect waves-light");
     $('.marginCSS').css("margin", "10px");
     $('.floatclass').css("float", "left");
 
-    $('.fc-next-button').html("<a class='btn-floating btn light-blue accent-2 waves-effect waves-light'><i class='material-icons right'>skip_next</i></a>");
-    $('.fc-prev-button').html("<a class='btn-floating btn light-blue accent-2 waves-effect waves-light'><i class='material-icons right'>skip_previous</i></a>");
+    $('.fc-next-button').html("<i class='material-icons right'>skip_next</i>");
+    $('.fc-prev-button').html("<i class='material-icons right'>skip_previous</i>");
   }
   render() {
     return (

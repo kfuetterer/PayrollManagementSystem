@@ -20,7 +20,7 @@ class Schedule extends React.Component {
           center: 'title',
           right: 'next'
         },
-        eventColor: '#378006',
+        eventColor: '#40c4ff',
         navLinks: false,
         columnFormat: {
             week: 'ddd'
@@ -29,13 +29,14 @@ class Schedule extends React.Component {
         defaultTimedEventDuration: this.state.duration,
         displayEventTime: false
     });
-    $('.fc-next-button').addClass("marginCSS floatclass");
-    $('.fc-prev-button').addClass("marginCSS floatclass");
+    $('.fc-next-button').addClass("marginCSS floatclassright btn-floating btn light-blue accent-2 waves-effect waves-light");
+    $('.fc-prev-button').addClass("marginCSS floatclassleft btn-floating btn light-blue accent-2 waves-effect waves-light");
     $('.marginCSS').css("margin", "10px");
-    $('.floatclass').css("float", "left");
+    $('.floatclassleft').css("float", "left");
+    $('.floatclassright').css("float", "right");
 
-    $('.fc-next-button').html("<a class='btn-floating btn light-blue accent-2 waves-effect waves-light'><i class='material-icons right'>skip_next</i></a>");
-    $('.fc-prev-button').html("<a class='btn-floating btn light-blue accent-2 waves-effect waves-light'><i class='material-icons right'>skip_previous</i></a>");
+    $('.fc-next-button').html("<i class='material-icons right'>skip_next</i>");
+    $('.fc-prev-button').html("<i class='material-icons right'>skip_previous</i>");
   }
   render() {
     return (

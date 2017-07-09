@@ -46,7 +46,7 @@ class ProfilePage extends Component {
           <div className="row">
             <div className="col m4 s12">
               <div className="row">
-                <h5 className="blueHeader z-depth-3">Clock In/Out</h5>
+                <h5 className="blueHeader z-depth-2">Clock In/Out</h5>
               </div>
               <div className="row" id="clockin_border">
                 <div className="col s12">
@@ -60,7 +60,7 @@ class ProfilePage extends Component {
             </div>
             <div className="col m7 s12">
               <div className="row">
-                <h5 className="blueHeader z-depth-3">Schedule</h5>
+                <h5 className="blueHeader z-depth-2">Schedule</h5>
               </div>
               <div className="row" id="schedule_border">
                   <Schedule
@@ -74,7 +74,7 @@ class ProfilePage extends Component {
           <div className="row">
             <div className="col s12">
               <div className="row">
-                <h5 className="blueHeader z-depth-3">Hours Worked</h5>
+                <h5 className="blueHeader z-depth-2">Hours Worked</h5>
               </div>
               <div className="row" id="worksegment_border">
                 <WorkSegment
@@ -88,7 +88,7 @@ class ProfilePage extends Component {
           <div className="row">
             <div className="col m5 s12">
               <div className="row">
-                <h5 className="blueHeader z-depth-3">Time Off Form</h5>
+                <h5 className="blueHeader z-depth-2">Time Off Form</h5>
               </div>
               <div className="row" id="timeoffform_border">
                 <TimeOffForm
@@ -102,7 +102,7 @@ class ProfilePage extends Component {
             </div>
             <div className="col m6 s12">
               <div className="row">
-                <h5 className="blueHeader z-depth-3">Time Off Requests</h5>
+                <h5 className="blueHeader z-depth-2">Time Off Requests</h5>
               </div>
               <div className="row" id="timeoffsegment_border">
                 <TimeOffSegment
