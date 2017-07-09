@@ -3,8 +3,10 @@ a, h1, h2, h3, h4, h5, p, button, th, td {
 }
 
 body {
-    background-image: url("../img/iStock-185921327.jpg");
+    background-image: url("../img/PayrollPresentation23.jpg");
+    background-size: 100% 100%;
     background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 .navbar-fixed {
@@ -15,43 +17,7 @@ material-icons {
   font-size: 60px
 }
 
-#clockin_border {
-  border:1px solid lightslategray;  
-  padding: 20px;
-  background-color: rgba(255,255,255,.4);
-}
-
-#schedule_border {
-  border:1px solid lightslategray;  
-  padding: 20px;
-  background-color: rgba(255,255,255,.4);
-}
-
-#worksegment_border {
-  border:1px solid lightslategray;  
-  padding: 20px;
-  background-color: rgba(255,255,255,.4);
-}
-
-#timeoffform_border {
-  border:1px solid lightslategray;  
-  padding: 20px;
-  background-color: rgba(255,255,255,.4);
-}
-
-#timeoffsegment_border {
-  border:1px solid lightslategray;  
-  padding: 20px;
-  background-color: rgba(255,255,255,.4);
-}
-
-#signin_border {
-  border:1px solid lightslategray;
-  padding: 20px;
-  background-color: rgba(255,255,255,.4);
-}
-
-#signup_border {
+.border {
   border:1px solid lightslategray;
   padding: 20px;
   background-color: rgba(255,255,255,.4);

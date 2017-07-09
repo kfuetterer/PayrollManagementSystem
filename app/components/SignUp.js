@@ -50,7 +50,7 @@ class SignUp extends Component {
                         <div className="row">
                             <h5 className="blueHeader z-depth-3">Sign Up</h5>
                         </div>
-                        <div className="row" id="signup_border">
+                        <div className="row border">
                             <div className="form-group">
                                 <label htmlFor="first_name">First Name</label><br />
                                 <input type="text" value={this.state.first_name} name="first_name" onChange={this.handleInputChange} />

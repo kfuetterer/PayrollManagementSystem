@@ -48,7 +48,7 @@ class ProfilePage extends Component {
               <div className="row">
                 <h5 className="blueHeader z-depth-2">Clock In/Out</h5>
               </div>
-              <div className="row" id="clockin_border">
+              <div className="row border">
                 <div className="col s12">
                   <ClockIn
                     email={this.state.email}
@@ -62,7 +62,7 @@ class ProfilePage extends Component {
               <div className="row">
                 <h5 className="blueHeader z-depth-2">Schedule</h5>
               </div>
-              <div className="row" id="schedule_border">
+              <div className="row border">
                   <Schedule
                       schedules={this.state.schedules}
                       getSchedule={this.getSchedule}
@@ -76,7 +76,7 @@ class ProfilePage extends Component {
               <div className="row">
                 <h5 className="blueHeader z-depth-2">Hours Worked</h5>
               </div>
-              <div className="row" id="worksegment_border">
+              <div className="row border">
                 <WorkSegment
                   worksegments={this.state.worksegments}
                   getWorkSegment={this.getWorkSegment}
@@ -90,7 +90,7 @@ class ProfilePage extends Component {
               <div className="row">
                 <h5 className="blueHeader z-depth-2">Time Off Form</h5>
               </div>
-              <div className="row" id="timeoffform_border">
+              <div className="row border">
                 <TimeOffForm
                   timeoffsegments={this.state.timeoffsegments}
                   getTimeOffSegment={this.getTimeOffSegment}
@@ -104,7 +104,7 @@ class ProfilePage extends Component {
               <div className="row">
                 <h5 className="blueHeader z-depth-2">Time Off Requests</h5>
               </div>
-              <div className="row" id="timeoffsegment_border">
+              <div className="row border">
                 <TimeOffSegment
                   timeoffsegments={this.state.timeoffsegments}
                   getTimeOffSegment={this.getTimeOffSegment}

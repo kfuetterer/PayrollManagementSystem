@@ -14,20 +14,20 @@ class Schedule extends React.Component {
         editable: false,
         handleWindowResize: true,
         weekends: true,
-        defaultView: 'agendaWeek',
+        defaultView: 'basicWeek',
         header: {
           left: 'prev',
           center: 'title',
           right: 'next'
         },
+        allDay: false,
         eventColor: '#40c4ff',
         navLinks: false,
         columnFormat: {
             week: 'ddd'
         },
-        minTime: this.state.minTime,
-        defaultTimedEventDuration: this.state.duration,
-        displayEventTime: false
+        displayEventTime: true,
+        aspectRatio: 2.25
     });
     $('.fc-next-button').addClass("marginCSS floatclassright btn-floating btn light-blue accent-2 waves-effect waves-light");
     $('.fc-prev-button').addClass("marginCSS floatclassleft btn-floating btn light-blue accent-2 waves-effect waves-light");

@@ -49,6 +49,13 @@ passport.deserializeUser(function(id, cb) {
     });
 });
 
+router.use(function(req,res,next){
+    if(req.user){
+        res.locals.user = req.user.email
+    }
+    next()
+});
+
 router.post("/signup", function(req, res, next){
     db.Employee.findOne({
         where: {
@@ -72,7 +79,7 @@ router.post("/signup", function(req, res, next){
         } else {
             res.send("user exists");
         }
-    })
+    });
 });
 
 router.get("/signup", function(req, res){
