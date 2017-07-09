@@ -46,37 +46,32 @@ class TimeOffForm extends React.Component {
             <div className="form-group">
               <label>Start Date</label>
               <input
-                  type="date" className="datepicker"
-                  name="start_date"
-                  onChange={this.handleInputChange}
-                  value={this.state.start_date}
+                type="date" className="datepicker"
+                name="start_date"
+                onChange={this.handleInputChange}
               />
               <label>End Date</label><br />
               <input
                 type="date" className="datepicker"
                 name="end_date"
                 onChange={this.handleInputChange}
-                value={this.state.end_date}
               />
               <label>Hours Per Day</label><br />
               <input
                 name="hoursperday"
                 onChange={this.handleInputChange}
-                value={this.state.hoursperday}
               />
               <label>Notes</label><br />
               <textarea
                 name="notes"
                 className="materialize-textarea"
                 onChange={this.handleInputChange}
-                value={this.state.notes}
               />
               <br />
               <input
                 name="include_weekend"
                 type="checkbox" id="include_weekend"
                 onChange={this.handleInputChange}
-                value={this.state.include_weekend}
               />
               <label htmlFor="include_weekend">Include Weekend</label>
               <br />
@@ -84,7 +79,6 @@ class TimeOffForm extends React.Component {
                 name="include_holidays"
                 type="checkbox" id="include_holidays"
                 onChange={this.handleInputChange}
-                value={this.state.include_holidays}
               />
               <label htmlFor="include_holidays">Inlude Holidays</label>
               <br />

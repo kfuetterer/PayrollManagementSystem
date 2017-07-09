@@ -13,15 +13,8 @@ class LoginPage extends Component {
     this.handleInputPasswordChange = this.handleInputPasswordChange.bind(this);
     this.handleButtonClick = this.handleButtonClick.bind(this);
   }
-  handleInputEmailChange(event) {
-    this.setState({ 
-      email: event.target.value
-    });
-  }
-  handleInputPasswordChange(event) {
-    this.setState({ 
-      password: event.target.value
-    });
+  handleInputChange (e) {
+    this.setState({[e.target.name]: e.target.value});
   }
   handleButtonClick() {
     const newUserLogin = {
@@ -43,17 +36,18 @@ class LoginPage extends Component {
 
                   <label htmlFor="email">Email</label><br />
                   <input
+                    className="validate"
+                    type="email"
                     id="email"
-                    onChange={this.handleInputEmailChange}
-                    value={this.state.email}
+                    onChange={this.handleInputChange}
                   />
                   <br />
                   <label htmlFor="password">Password</label><br />
                   <input
+                    className="validate"
                     type="password"
                     id="password"
-                    onChange={this.handleInputPasswordChange}
-                    value={this.state.password}
+                    onChange={this.handleInputChange}
                   />
                   <br />
                   <br />
