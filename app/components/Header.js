@@ -5,12 +5,13 @@ class Header extends Component {
   constructor() {
     super();
     this.state = {
+      authenticated: false,
       email: "",
       password: ""
     }
   }
   authenticated() {
-    if (this.props.authenticated) {
+    if (this.state.authenticated) {
       return(
         <li>
           <Link to="/signout" activeClassName="active">Sign Out</Link>
