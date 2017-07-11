@@ -5,9 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     {
       classMethods: {
         associate: function(models) {
-          Company.hasMany(models.Employees, {
-            onDelete: "cascade"
-          });
+          Company.hasMany(models.Employees, {});
         }
       }
     }

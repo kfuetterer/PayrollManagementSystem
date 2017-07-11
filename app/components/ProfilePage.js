@@ -11,7 +11,6 @@ class ProfilePage extends Component {
     constructor() {
         super();
         this.state = {
-            email: "",
             schedules: [],
             timeoffsegments: [],
             worksegments: []
@@ -53,9 +52,7 @@ class ProfilePage extends Component {
               </div>
               <div className="row border">
                 <div className="col s12">
-                  <ClockIn
-                    email={this.state.email}
-                  />
+                  <ClockIn />
                 </div>
               </div>
             </div>
@@ -69,7 +66,6 @@ class ProfilePage extends Component {
                   <Schedule
                       schedules={this.state.schedules}
                       getSchedule={this.getSchedule}
-                      email={this.state.email}
                   />
               </div>
             </div>
@@ -83,7 +79,6 @@ class ProfilePage extends Component {
                 <WorkSegment
                   worksegments={this.state.worksegments}
                   getWorkSegment={this.getWorkSegment}
-                  email={this.state.email}
                 />
               </div>
             </div>
@@ -97,7 +92,6 @@ class ProfilePage extends Component {
                 <TimeOffForm
                   timeoffsegments={this.state.timeoffsegments}
                   getTimeOffSegment={this.getTimeOffSegment}
-                  email={this.state.email}
                 />
               </div>
             </div>
@@ -111,7 +105,6 @@ class ProfilePage extends Component {
                 <TimeOffSegment
                   timeoffsegments={this.state.timeoffsegments}
                   getTimeOffSegment={this.getTimeOffSegment}
-                  email={this.state.email}
                 />
               </div>
             </div>

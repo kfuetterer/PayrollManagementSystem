@@ -7,7 +7,18 @@ module.exports = function(sequelize, DataTypes) {
     include_weekend: { type: DataTypes.BOOLEAN, defaultValue: false },
     include_holidays: { type: DataTypes.BOOLEAN, defaultValue: false },
     approved: { type: DataTypes.BOOLEAN, defaultValue: false}
-  }
+  },
+   {
+      classMethods: {
+        associate: function(models) {
+          Timeoffsegment.belongsTo(models.Employee, {
+            foreignKey: {
+              allowNull: false
+            }
+          });
+        }
+      }
+    }
   );
   return Timeoffsegment;
 };

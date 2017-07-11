@@ -5,7 +5,6 @@ class LoginPage extends Component {
   constructor() {
     super();
     this.state = {
-      authenticated: true,
       email: "",
       password: ""
     };
@@ -21,8 +20,7 @@ class LoginPage extends Component {
       password: this.state.password
     }
     API.signIn(user).then((res) => {
-      this.setState({authenticated: true});
-      console.log(res);
+      console.log(res.data);
     });
   }
   render() {

@@ -9,7 +9,9 @@ module.exports = function(sequelize, DataTypes) {
       classMethods: {
         associate: function(models) {
           Schedule.belongsTo(models.Employee, {
-            onDelete: "cascade"
+            foreignKey: {
+              allowNull: false
+            }
           });
         }
       }

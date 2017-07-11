@@ -18,7 +18,7 @@ module.exports = {
       });
   },
   create: function(req, res) {
-    Employee.create(req.body).then(function(doc) {
+    db.Employee.create(req.body).then(function(doc) {
       res.json(doc);
     }).catch(function(err) {
       res.json(err);

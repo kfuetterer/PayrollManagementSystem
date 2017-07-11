@@ -1,9 +1,6 @@
 import axios from "axios";
 
 const API = {
-  getApproval: function() {
-    return axios.get("/api/approval");
-  },
   signIn: function() {
     return axios.post("/signin");
   },

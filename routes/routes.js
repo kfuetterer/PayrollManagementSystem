@@ -1,6 +1,7 @@
 var express = require("express");
 var path = require("path");
 var db = require("../models");
+var Employee = require("../models/employee.js");
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var bCrypt = require('bcrypt-nodejs');
@@ -20,22 +21,22 @@ router.use(passport.session());
 
 passport.use(new LocalStrategy({usernameField:"email", passwordField:"password"}, function(email, password, cb){
     var hashedPass = bCrypt.hashSync(password)
-    db.Employee.findOne({
-        where: {
-            email: email
-        }
-        }).then(function(user, err){
-            if (err) { 
-                return cb(err); 
-            }
-            if (!user) { 
-                return cb(null, false); 
-            }
-            if (!bCrypt.compareSync(pass, user.password)){ 
-                return cb(null, false); 
-            }
-            return cb(null, user);
-        })
+    db.Employee.findOne({ 
+      where: {
+        email: email 
+      }
+    }).then(function(user, err){
+      if (err) { 
+        return cb(err); 
+      }
+      if (!user) { 
+        return cb(null, false); 
+      }
+      if (!bCrypt.compareSync(pass, user.password)){ 
+        return cb(null, false); 
+      }
+        return cb(null, user);
+      })
 }));
 
 passport.serializeUser(function(user, cb) {

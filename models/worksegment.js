@@ -7,8 +7,16 @@ module.exports = function(sequelize, DataTypes) {
     {
       classMethods: {
         associate: function(models) {
-          Worksegment.belongsTo(models.Employee, {});
-          Worksegment.belongsTo(models.Payrollcycle, {});
+          Worksegment.belongsTo(models.Employee, {
+            foreignKey: {
+              allowNull: false
+            }
+          });
+          Worksegment.belongsTo(models.Payrollcycle, {
+            foreignKey: {
+              allowNull: false
+            }
+          });
         },
       }
     }
