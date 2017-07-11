@@ -18,7 +18,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static(__dirname + "/public"));
 app.use("/", routes);
 
-db.sequelize.sync({}).then(function() {
+db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("Now listening on port %s! Visit localhost:%s in your browser.", PORT, PORT);
   });

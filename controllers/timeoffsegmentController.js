@@ -18,7 +18,16 @@ module.exports = {
       });
   },
   create: function(req, res) {
-    db.Timeoffsegment.create(req.body).then(function(doc) {
+    db.Timeoffsegment.create({
+      start_date: req.body.start_date,
+      end_date: req.body.end_date,
+      hoursperday: req.body.hoursperday,
+      notes: req.body.notes,
+      include_weekend: req.body.include_weekend,
+      include_holidays: req.body.include_holidays,
+      approved: req.body.approved,
+      EmployeeId: req.user.id
+    }).then(function(doc) {
       res.json(doc);
     }).catch(function(err) {
       res.json(err);

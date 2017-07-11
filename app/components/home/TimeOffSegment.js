@@ -18,21 +18,19 @@ class TimeOffSegment extends React.Component {
             week: 'ddd'
         },
         displayEventTime: true,
-        eventColor: '#40c4ff',
         aspectRatio: 1.2,
         events: [
           {
             title  : 'Vacation',
-            start  : '2017-07-09',
-            end: '2017-07-13'
+            start  : '2017-07-09', //this.props.timeoffsegments.start_date
+            end: '2017-07-13' //this.props.timeoffsegments.end_date
           },
           {
             title  : 'Vacation',
-            start  : '2017-08-09',
-            end: '2017-08-21'
+            start  : '2017-08-09', //this.props.timeoffsegments.start_date
+            end: '2017-08-21' //this.props.timeoffsegments.end_date
           }
-        ],
-        eventBackgroundColor: '#ffffff'
+        ]
     });
     $('.fc-next-button').addClass("marginCSS floatclass btn-floating btn light-blue accent-2 waves-effect waves-light");
     $('.fc-prev-button').addClass("marginCSS floatclass btn-floating btn light-blue accent-2 waves-effect waves-light");
@@ -47,7 +45,8 @@ class TimeOffSegment extends React.Component {
       <div>
         <div className="row">
           <div className="col s12">
-            <div id='calendar1'></div>
+            <div id='calendar1'>
+            </div>
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ const routes = (
   <Router history={browserHistory}>
     <Route path='/' component={MasterPage}>
       <IndexRoute component={LoginPage} />
-      <Route path='signup' component={SignUp} />
+      <Route path='signuppage' component={SignUp} />
       <Route path='profile' component={ProfilePage} />
     </Route>
   </Router>

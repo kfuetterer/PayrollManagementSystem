@@ -1,12 +1,9 @@
-a, h1, h2, h3, h4, h5, p, button, th, td {
-  font-family: 'Reem Kufi', sans-serif;
-}
-
 body {
     background-image: url("../img/PayrollPresentation23.jpg");
     background-size: 100% 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    font-family: 'Reem Kufi', sans-serif;
 }
 
 .navbar-fixed {
@@ -73,4 +70,26 @@ td {
 }
 #nextButtonFloat {
   float: right;
+}
+
+.fc-day-number {
+  border-right:1px solid black !important;
+  float: left;
+  text-align: left;
+  width: 14.2%;
+}
+
+.fc-day-header {
+  float: left;
+  width: 14.2%;
+}
+
+.fc-today {
+  color: #40c4ff !important;
+}
+
+.fc-event-container {
+  float: left;
+  width: 14.2%;
+  text-align: left;
 }

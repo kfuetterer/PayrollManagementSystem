@@ -10,8 +10,9 @@ module.exports = {
     else {
       query = req.params.id ? { id: req.params.id } : {};
     }
-    db.Payrollcycle.find(query)
-      .then(function(doc) {
+    db.Payrollcycle.find(query, {
+      EmployeeId: req.user.id
+    }).then(function(doc) {
         res.json(doc);
       }).catch(function(err) {
         res.json(err);

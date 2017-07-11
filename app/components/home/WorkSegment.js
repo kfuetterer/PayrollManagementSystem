@@ -36,9 +36,9 @@ class WorkSegment extends React.Component {
               <tbody>
                 <tr>
                   {/*<td>{this.approved()}</td>*/}
-                  {/*<td>{this.props.worksegment.clock_in}</td>*/}
-                  {/*<td>{this.props.worksegment.clock_out}</td>*/}
-                  {/*<td>{this.props.worksegment.clock_out - this.props.worksegment.clock_in}</td>*/}
+                  {/*<td>{this.props.worksegments.clock_in}</td>*/}
+                  {/*<td>{this.props.worksegments.clock_out}</td>*/}
+                  {/*<td>{this.props.worksegments.clock_out - this.props.worksegment.clock_in}</td>*/}
                 </tr>
               </tbody>
             </table>

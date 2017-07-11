@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
     first_name: { type: DataTypes.STRING, allowNull: false },
     last_name: { type: DataTypes.STRING, allowNull: false },
     street_address: { type: DataTypes.STRING, allowNull: false },
-    phone_number: { type: DataTypes.INTEGER, allowNull: false },
+    phone_number: { type: DataTypes.STRING, allowNull: false },
     email: { 
       type: DataTypes.STRING, 
       allowNull: false, 
@@ -28,7 +28,6 @@ module.exports = function(sequelize, DataTypes) {
         }
       }
     },
-    admin: { type: DataTypes.BOOLEAN, defaultValue: false, allowNull: true },
     pay_type: { type: DataTypes.STRING, allowNull: false },
     pay_rate: { type: DataTypes.DECIMAL, allowNull: false },
   },

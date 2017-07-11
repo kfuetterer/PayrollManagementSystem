@@ -18,10 +18,11 @@ module.exports = {
       });
   },
   create: function(req, res) {
-    db.Worksegment.create(
-      req.body
-      
-      ).then(function(doc) {
+    db.Worksegment.create({
+        clock_in: req.body.clock_in,
+        clock_out: req.body.clock_out,
+        EmployeeId: req.user.id
+      }).then(function(doc) {
       res.json(doc);
     }).catch(function(err) {
       res.json(err);

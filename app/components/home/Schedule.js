@@ -20,12 +20,28 @@ class Schedule extends React.Component {
             week: 'ddd'
         },
         displayEventTime: true,
+        displayEventEnd: true,
         aspectRatio: 2.25,
         events: [
           {
             title  : '',
+            start  : '2017-07-09T08:30:00',
+            end: '2017-07-09T12:30:00'
+          },
+          {
+            title  : '',
             start  : '2017-07-10T08:30:00',
             end: '2017-07-10T12:30:00'
+          },
+          {
+            title  : '',
+            start  : '2017-07-11T08:30:00',
+            end: '2017-07-11T12:30:00'
+          },
+          {
+            title  : '',
+            start  : '2017-07-12T08:30:00',
+            end: '2017-07-12T12:30:00'
           },
           {
             title  : '',
@@ -34,11 +50,11 @@ class Schedule extends React.Component {
           }
         ]
         // events: function(start, end) {
-        //   let events = [];
+        //   var events = [];
         //   events.push({
-        //     title: this.props.data.title,
-        //     start: this.props.data.start_time,
-        //     end: this.props.data.end_time
+        //     title: this.props.schedules.title,
+        //     start: this.props.schedules.start_time,
+        //     end: this.props.schedules.end_time
         //   });
         // }
     });

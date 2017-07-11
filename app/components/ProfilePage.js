@@ -34,11 +34,13 @@ class ProfilePage extends Component {
     getTimeOffSegment() {
         API.getTimeOffSegment().then((res) => {
           this.setState({ timeoffsegments: res.data });
+          console.log(this.state.timeoffsegments);
         });
     }
     getWorkSegment() {
         API.getWorkSegment().then((res) => {
           this.setState({ worksegments: res.data });
+          console.log(this.state.worksegments);
         });
     }
   render() {

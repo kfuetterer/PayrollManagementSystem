@@ -5,16 +5,16 @@ const API = {
     return axios.get("/api/approval");
   },
   signIn: function() {
-    return axios.post("/api/signin");
+    return axios.post("/signin");
   },
   signUp: function() {
-    return axios.post("/api/signup");
+    return axios.post("/signup");
   },
   signUP: function() {
-    return axios.get("/api/signup");
+    return axios.get("/signup");
   },
   signOut: function() {
-    return axios.post("/api/signout");
+    return axios.post("/signout");
   },
   getEmployee: function() {
     return axios.get("/api/employee");

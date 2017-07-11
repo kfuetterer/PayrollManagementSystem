@@ -36,10 +36,10 @@ class SignUp extends Component {
             password: this.state.password
         }
         API.signUp(newUser).then((res) => {
-            console.log(res);
+            console.log(res.data);
         });
         API.signUP(newLogin).then((res) => {
-            console.log(res);
+            console.log(res.data);
         });
     }
     render() {
