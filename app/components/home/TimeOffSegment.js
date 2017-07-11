@@ -19,7 +19,20 @@ class TimeOffSegment extends React.Component {
         },
         displayEventTime: true,
         eventColor: '#40c4ff',
-        aspectRatio: 1.2
+        aspectRatio: 1.2,
+        events: [
+          {
+            title  : 'Vacation',
+            start  : '2017-07-09',
+            end: '2017-07-13'
+          },
+          {
+            title  : 'Vacation',
+            start  : '2017-08-09',
+            end: '2017-08-21'
+          }
+        ],
+        eventBackgroundColor: '#ffffff'
     });
     $('.fc-next-button').addClass("marginCSS floatclass btn-floating btn light-blue accent-2 waves-effect waves-light");
     $('.fc-prev-button').addClass("marginCSS floatclass btn-floating btn light-blue accent-2 waves-effect waves-light");

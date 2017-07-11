@@ -1,7 +1,8 @@
 module.exports = function(sequelize, DataTypes) {
   var Schedule = sequelize.define("Schedule", {
+    title: { type: DataTypes.STRING, allowNull: false},
     schedule_date: { type: DataTypes.DATE, allowNull: false },
-    hours: { type: DataTypes.INTEGER, allowNull: true },
+    end_time: { type: DataTypes.TIME, allowNull: true },
     start_time: { type: DataTypes.TIME, allowNull: true }
   },
     {

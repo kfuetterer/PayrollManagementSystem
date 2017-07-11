@@ -18,7 +18,10 @@ module.exports = {
       });
   },
   create: function(req, res) {
-    db.Worksegment.create(req.body).then(function(doc) {
+    db.Worksegment.create(
+      req.body
+      
+      ).then(function(doc) {
       res.json(doc);
     }).catch(function(err) {
       res.json(err);

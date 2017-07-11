@@ -36,7 +36,6 @@ module.exports = function(sequelize, DataTypes) {
       classMethods: {
         associate: function(models) {
           Employee.belongsTo(models.Company, {});
-          Employee.hasMany(models.WorkSegment, {});
         }
       }
     }

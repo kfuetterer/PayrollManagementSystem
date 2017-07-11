@@ -26,9 +26,10 @@ class ProfilePage extends Component {
         this.getWorkSegment();
     }
     getSchedule() {
-        API.getSchedule().then((res) => {
-          this.setState({ schedules: res.data });
-        });
+      API.getSchedule().then((res) => {
+        this.setState({ schedules: res.data });
+        console.log(this.state.schedules);
+      });
     }
     getTimeOffSegment() {
         API.getTimeOffSegment().then((res) => {

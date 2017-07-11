@@ -28,7 +28,7 @@ class ClockIn extends React.Component {
   }
   handleButtonClickIn() {
     const newWorkSegmentIn = this.state.clock_in;
-    API.saveWorkSegment(newWorkSegmentOut).then(this.props.getWorkSegment);
+    API.saveWorkSegment(newWorkSegmentIn).then(this.props.getWorkSegment);
   }
   handleButtonClickOut() {
     const newWorkSegmentOut = this.state.clock_out;
@@ -71,9 +71,9 @@ class ClockIn extends React.Component {
           </div>
         </div>
         <div className="row">
-          <p>Company: blahblah</p>
+          <p>Company: Boxes Incorporated</p>
           <p>Pay Rate: $20/h</p>
-          <p>Company ID: 123123123</p>
+          <p>Company ID: 123456</p>
         </div>
       </div>
     );
