@@ -17,6 +17,21 @@ module.exports = function(sequelize, DataTypes) {
               allowNull: false
             }
           });
+          Employee.hasMany(models.Schedule, {
+            foreignKey: {
+              allowNull: false
+            }
+          });
+          Employee.hasMany(models.Worksegment, {
+            foreignKey: {
+              allowNull: false
+            }
+          });
+          Employee.hasMany(models.Timeoffsegment, {
+            foreignKey: {
+              allowNull: false
+            }
+          });
         }
       }
     }

@@ -32,7 +32,7 @@ passport.use(new LocalStrategy({usernameField:"email", passwordField:"password"}
       if (!user) { 
         return cb(null, false); 
       }
-      if (!bCrypt.compareSync(pass, user.password)){ 
+      if (!bCrypt.compareSync(password, user.password)){ 
         return cb(null, false); 
       }
         return cb(null, user);
@@ -62,6 +62,7 @@ router.post("/signup", function(req, res, next){
             email: req.body.email
         }
     }).then(function(user){
+        console.log(req.body);
         if(!user){
         db.Employee.create({
             first_name: req.body.first_name,
@@ -73,8 +74,9 @@ router.post("/signup", function(req, res, next){
             pay_type: req.body.pay_type,
             pay_rate: req.body.pay_rate
         }).then(function(user){
-            passport.authenticate("local", {failureRedirect:"/signup", successRedirect: "/profile"})(req, res, next)
-            return done(null, user);
+            passport.authenticate("local", {failureRedirect:"/signup", successRedirect: "/signup"})(req, res, next)
+            //return next(null, user);
+            //res.json(user);
         })
         } else {
             res.send("user exists");
@@ -84,12 +86,11 @@ router.post("/signup", function(req, res, next){
 
 router.get("/signup", function(req, res){
     console.log("Successfully signed up.");
-    res.redirect("/profile");
+    res.json(req.user);
 });
 
 router.post("/signin", passport.authenticate('local'), function(req, res) {
     console.log("Succesfully signed in.");
-    res.redirect("/profile");
 });
 
 router.get('/signout', function(req, res){

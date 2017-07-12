@@ -17,6 +17,8 @@ class TimeOffSegment extends React.Component {
         columnFormat: {
             week: 'ddd'
         },
+        color: '#ffff00',
+        textColor: '#ffffff',
         displayEventTime: true,
         aspectRatio: 1.2,
         events: [

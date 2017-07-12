@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import { browserHistory } from 'react-router';
+
  
 class SignUp extends Component {
     constructor() {
@@ -37,10 +39,13 @@ class SignUp extends Component {
         }
         API.signUp(newUser).then((res) => {
             console.log(res.data);
+            if (res.data) {
+                browserHistory.push('/profile');
+            }
         });
-        API.signUP(newLogin).then((res) => {
-            console.log(res.data);
-        });
+        // API.signUP(newLogin).then((res) => {
+        //     console.log(res.data);
+        // });
     }
     render() {
         return (

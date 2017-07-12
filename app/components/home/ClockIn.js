@@ -15,22 +15,16 @@ class ClockIn extends React.Component {
       clock_out: "",
       date: date
     };
-    this.handleInputChangeIn = this.handleInputChangeIn.bind(this);
     this.handleButtonClickIn = this.handleButtonClickIn.bind(this);
-    this.handleInputChangeOut = this.handleInputChangeOut.bind(this);
     this.handleButtonClickOut = this.handleButtonClickOut.bind(this);
   }
-  handleInputChangeIn() {
-    this.setState({ clock_in: Date.now() });
-  }
-  handleInputChangeOut() {
-    this.setState({ clock_out: Date.now() });
-  }
   handleButtonClickIn() {
+    this.setState({ clock_in: new Date() });
     const newWorkSegmentIn = this.state.clock_in;
     API.saveWorkSegment(newWorkSegmentIn).then(this.props.getWorkSegment);
   }
   handleButtonClickOut() {
+    this.setState({ clock_out: new Date() });
     const newWorkSegmentOut = this.state.clock_out;
     API.updateWorkSegment(newWorkSegmentOut).then(this.props.getWorkSegment);
     this.setState({ clock_in: "", clock_out: "" });
@@ -40,34 +34,29 @@ class ClockIn extends React.Component {
       <div>
         <div className="row">
           <div className="col s6">
-            <div>
-              <br />
-              <br />
-              <button onChange={this.handleInputChangeIn}
-                onClick={this.handleButtonClickIn}
-                className="btn btn-success light-blue accent-2 waves-effect waves-light btn" type="submit" name="action"
-              ><i className="material-icons">query_builder</i> In</button>
-              <br />
-              <br />
-              <button onChange={this.handleInputChangeOut}
-                onClick={this.handleButtonClickOut}
-                className="btn btn-success light-blue accent-2 waves-effect waves-light btn" type="submit" name="action"
-              ><i className="material-icons">done</i> Out</button>
-            </div>
+            <br />
+            <button
+              onClick={this.handleButtonClickIn}
+              className="btn btn-success light-blue accent-2 waves-effect waves-light btn" type="submit" name="action"
+            ><i className="material-icons">query_builder</i> In</button>
+            <br />
           </div>
           <div className="col s6">
-            <div className="row">
-              <div className="col s12">
-                <p>Current Date:</p>
-                <p>{this.state.date}</p>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col s12">
-                <p>Current Time:</p>
-                <p><Clock /></p>
-              </div>
-            </div>
+            <br />
+            <button
+              onClick={this.handleButtonClickOut}
+              className="btn btn-success light-blue accent-2 waves-effect waves-light btn" type="submit" name="action"
+            ><i className="material-icons">done</i> Out</button>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col s6 m6">
+            <p>Current Date:</p>
+            <p>{this.state.date}</p>
+          </div>
+          <div className="col s6 m6">
+            <p>Current Time:</p>
+            <p><Clock /></p>
           </div>
         </div>
         <div className="row">

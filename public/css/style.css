@@ -84,6 +84,10 @@ td {
   width: 14.2%;
 }
 
+.clockinbuttons {
+  float: left;
+}
+
 .fc-today {
   color: #40c4ff !important;
 }

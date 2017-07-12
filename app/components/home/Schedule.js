@@ -21,7 +21,7 @@ class Schedule extends React.Component {
         },
         displayEventTime: true,
         displayEventEnd: true,
-        aspectRatio: 2.25,
+        aspectRatio: 2.75,
         events: [
           {
             title  : '',

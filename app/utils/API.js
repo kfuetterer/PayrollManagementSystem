@@ -4,10 +4,11 @@ const API = {
   signIn: function() {
     return axios.post("/signin");
   },
-  signUp: function() {
-    return axios.post("/signup");
+  signUp: function(user) {
+    console.log(user);
+    return axios.post("/signup", user);
   },
-  signUP: function() {
+  signUpGet: function() {
     return axios.get("/signup");
   },
   signOut: function() {

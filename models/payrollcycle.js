@@ -9,7 +9,9 @@ module.exports = function(sequelize, DataTypes) {
     {
       classMethods: {
         associate: function(models) {
-          Payrollcycle.hasMany(models.WorkSegment, {});
+          Payrollcycle.hasMany(models.WorkSegment, {
+            onDelete: "cascade"
+          });
         }
       }
     }
