@@ -12,7 +12,8 @@ class TimeOffForm extends React.Component {
       notes: "",
       include_weekend: false,
       include_holidays: false,
-      approved: ""
+      approved: "",
+      employeeId: ""
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleButtonClick = this.handleButtonClick.bind(this);

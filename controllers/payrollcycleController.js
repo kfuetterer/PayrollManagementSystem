@@ -11,7 +11,7 @@ module.exports = {
       query = req.params.id ? { id: req.params.id } : {};
     }
     db.Payrollcycle.find(query, {
-      EmployeeId: req.user.id
+      employeeE: req.user.email
     }).then(function(doc) {
         res.json(doc);
       }).catch(function(err) {

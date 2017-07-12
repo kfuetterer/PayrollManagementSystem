@@ -2,18 +2,6 @@ import { Link } from 'react-router';
 import React, { Component } from "react";
 
 class WorkSegment extends React.Component {
-  approved() {
-    if (this.props.worksegment.approved === true) {
-      return (
-        <i className="material-icons">done</i>
-      )
-    }
-    else if (this.props.worksegment.approved === false) {
-      return (
-        <i className="material-icons">not_interested</i>
-      )
-    }
-  }
   render() {
     return (
       <div>
@@ -27,7 +15,6 @@ class WorkSegment extends React.Component {
             <table className="striped">
               <thead>
                 <tr>
-                  <th>Approved</th>
                   <th>Clock In</th>
                   <th>Clock Out</th>
                   <th>Hours</th>
@@ -35,7 +22,6 @@ class WorkSegment extends React.Component {
               </thead>
               <tbody>
                 <tr>
-                  {/*<td>{this.approved()}</td>*/}
                   {/*<td>{this.props.worksegments.clock_in}</td>*/}
                   {/*<td>{this.props.worksegments.clock_out}</td>*/}
                   {/*<td>{this.props.worksegments.clock_out - this.props.worksegment.clock_in}</td>*/}

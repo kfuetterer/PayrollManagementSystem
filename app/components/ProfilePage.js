@@ -63,10 +63,10 @@ class ProfilePage extends Component {
                 <h5 className="blueHeader z-depth-2">Schedule</h5>
               </div>
               <div className="row border">
-                  <Schedule
-                      schedules={this.state.schedules}
-                      getSchedule={this.getSchedule}
-                  />
+                <Schedule
+                  schedules={this.state.schedules}
+                  getSchedule={this.getSchedule}
+                />
               </div>
             </div>
           </div>

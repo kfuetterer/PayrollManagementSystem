@@ -26,7 +26,7 @@ module.exports = {
       include_weekend: req.body.include_weekend,
       include_holidays: req.body.include_holidays,
       approved: req.body.approved,
-      EmployeeId: req.user.id
+      employeeE: req.user.email
     }).then(function(doc) {
       res.json(doc);
     }).catch(function(err) {

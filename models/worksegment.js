@@ -1,8 +1,8 @@
 module.exports = function(sequelize, DataTypes) {
   var Worksegment = sequelize.define("Worksegment", {
-    clock_in: { type: DataTypes.STRING, allowNull: true },
-    clock_out: { type: DataTypes.STRING, allowNull: true },
-    approved: { type: DataTypes.BOOLEAN, defaultValue: false, allowNull: true }
+    clock_in: DataTypes.STRING,
+    clock_out: DataTypes.STRING,
+    employeeId: DataTypes.INTEGER
   },
     {
       classMethods: {

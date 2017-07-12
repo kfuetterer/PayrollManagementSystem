@@ -1,9 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
   var Schedule = sequelize.define("Schedule", {
-    title: { type: DataTypes.STRING, allowNull: false},
-    schedule_date: { type: DataTypes.DATE, allowNull: false },
-    end_time: { type: DataTypes.TIME, allowNull: true },
-    start_time: { type: DataTypes.TIME, allowNull: true }
+    title: DataTypes.STRING,
+    schedule_date: DataTypes.DATE,
+    end_time: DataTypes.TIME,
+    start_time: DataTypes.TIME,
+    employeeId: DataTypes.INTEGER
   },
     {
       classMethods: {

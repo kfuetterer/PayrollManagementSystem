@@ -8,7 +8,7 @@ class ClockIn extends React.Component {
     super();
 
     var today = new Date(),
-    date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    date = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
 
     this.state = {
       clock_in: "",

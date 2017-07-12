@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import { browserHistory } from 'react-router';
  
 class LoginPage extends Component {
   constructor() {
     super();
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      employeeId: ""
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleButtonClick = this.handleButtonClick.bind(this);
@@ -20,7 +22,11 @@ class LoginPage extends Component {
       password: this.state.password
     }
     API.signIn(user).then((res) => {
-      console.log(res.data);
+      console.log(res.data.id);
+      this.setState({employeeId: res.data.id});
+      if (res.data) {
+        browserHistory.push('/profile');
+      }
     });
   }
   render() {
@@ -33,7 +39,7 @@ class LoginPage extends Component {
                   <br />
                   <label htmlFor="email">Email</label><br />
                   <input
-                    name="username"
+                    name="email"
                     className="validate"
                     type="email"
                     id="email"

@@ -14,7 +14,9 @@ class SignUp extends Component {
             email: "",
             password: "",
             pay_type: "",
-            pay_rate: ""
+            pay_rate: "",
+            companyId: "",
+            employeeId: ""
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleButtonClick = this.handleButtonClick.bind(this);
@@ -31,21 +33,16 @@ class SignUp extends Component {
             email: this.state.email,
             password: this.state.password,
             pay_type: this.state.pay_type,
-            pay_rate: this.state.pay_rate
-        }
-        const newLogin = {
-            email: this.state.email,
-            password: this.state.password
+            pay_rate: this.state.pay_rate,
+            companyId: this.state.companyId
         }
         API.signUp(newUser).then((res) => {
-            console.log(res.data);
+            console.log(res.data.id);
+            this.setState({employeeId: res.data.id});
             if (res.data) {
                 browserHistory.push('/profile');
             }
         });
-        // API.signUP(newLogin).then((res) => {
-        //     console.log(res.data);
-        // });
     }
     render() {
         return (
@@ -69,6 +66,8 @@ class SignUp extends Component {
                                 <input type="text" value={this.state.email} name="email" onChange={this.handleInputChange} />
                                 <label htmlFor="password">Password</label><br />
                                 <input type="password" value={this.state.password} name="password" onChange={this.handleInputChange} />
+                                <label htmlFor="companyId">Company ID</label><br />
+                                <input type="text" value={this.state.companyId} name="companyId" onChange={this.handleInputChange} />
                                 <label htmlFor="pay_type">Pay Type</label><br />
                                 <input type="text" value={this.state.pay_type} name="pay_type" onChange={this.handleInputChange} />
                                 <label htmlFor="pay_rate">Pay Rate</label><br />

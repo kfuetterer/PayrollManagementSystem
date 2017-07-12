@@ -1,18 +1,16 @@
 import axios from "axios";
 
 const API = {
-  signIn: function() {
-    return axios.post("/signin");
+  signIn: function(user) {
+    console.log(user);
+    return axios.post("/api/signin", user);
   },
   signUp: function(user) {
     console.log(user);
-    return axios.post("/signup", user);
-  },
-  signUpGet: function() {
-    return axios.get("/signup");
+    return axios.post("/api/signup", user);
   },
   signOut: function() {
-    return axios.post("/signout");
+    return axios.post("/api/signout");
   },
   getEmployee: function() {
     return axios.get("/api/employee");

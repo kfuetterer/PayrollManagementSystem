@@ -1,33 +1,19 @@
 module.exports = function(sequelize, DataTypes) {
   var Employee = sequelize.define("Employee", {
-    first_name: { type: DataTypes.STRING, allowNull: false },
-    last_name: { type: DataTypes.STRING, allowNull: false },
-    street_address: { type: DataTypes.STRING, allowNull: false },
-    phone_number: { type: DataTypes.STRING, allowNull: false },
-    email: { type: DataTypes.STRING, allowNull: false },
-    password: { type: DataTypes.STRING, allowNull: false },
-    pay_type: { type: DataTypes.STRING, allowNull: false },
-    pay_rate: { type: DataTypes.DECIMAL, allowNull: false },
+    first_name: DataTypes.STRING,
+    last_name: DataTypes.STRING,
+    street_address: DataTypes.STRING,
+    phone_number: DataTypes.STRING,
+    email: DataTypes.STRING,
+    password: DataTypes.STRING,
+    pay_type: DataTypes.STRING,
+    pay_rate: DataTypes.DECIMAL,
+    companyId: DataTypes.INTEGER
   },
     {
       classMethods: {
         associate: function(models) {
           Employee.belongsTo(models.Company, {
-            foreignKey: {
-              allowNull: false
-            }
-          });
-          Employee.hasMany(models.Schedule, {
-            foreignKey: {
-              allowNull: false
-            }
-          });
-          Employee.hasMany(models.Worksegment, {
-            foreignKey: {
-              allowNull: false
-            }
-          });
-          Employee.hasMany(models.Timeoffsegment, {
             foreignKey: {
               allowNull: false
             }

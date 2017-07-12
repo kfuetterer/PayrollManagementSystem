@@ -21,7 +21,7 @@ module.exports = {
     db.Worksegment.create({
         clock_in: req.body.clock_in,
         clock_out: req.body.clock_out,
-        EmployeeId: req.user.id
+        employeeE: req.user.email
       }).then(function(doc) {
       res.json(doc);
     }).catch(function(err) {
