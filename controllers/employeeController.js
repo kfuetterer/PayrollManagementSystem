@@ -3,14 +3,7 @@ var db = require("../models");
 
 module.exports = {
   index: function(req, res) {
-    var query;
-    if (req.query) {
-      query = req.query;
-    }
-    else {
-      query = req.params.id ? { id: req.params.id } : {};
-    }
-    db.Employee.find(query)
+    db.Employee.find({id: req.params.id})
       .then(function(doc) {
         res.json(doc);
       }).catch(function(err) {

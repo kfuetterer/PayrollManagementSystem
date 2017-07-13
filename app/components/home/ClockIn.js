@@ -60,9 +60,9 @@ class ClockIn extends React.Component {
           </div>
         </div>
         <div className="row">
-          <p>Company: Boxes Incorporated</p>
+          <p>Company: {this.props.company.company_name}</p>
           <p>Pay Rate: $20/h</p>
-          <p>Company ID: 123456</p>
+          <p>Company ID: {this.props.company.id}</p>
         </div>
       </div>
     );

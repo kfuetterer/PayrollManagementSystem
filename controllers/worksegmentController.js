@@ -10,8 +10,9 @@ module.exports = {
     else {
       query = req.params.id ? { id: req.params.id } : {};
     }
-    db.Worksegment.find(query)
-      .then(function(doc) {
+    db.Worksegment.find(query,{
+      employeeId: req.body.employeeId
+     }).then(function(doc) {
         res.json(doc);
       }).catch(function(err) {
         res.json(err);

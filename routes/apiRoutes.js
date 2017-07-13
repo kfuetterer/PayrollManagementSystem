@@ -5,6 +5,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var bCrypt = require('bcrypt-nodejs');
 
+var companyController = require("../controllers/companyController");
 var employeeController = require("../controllers/employeeController");
 var payrollcycleController = require("../controllers/payrollcycleController");
 var scheduleController = require("../controllers/scheduleController");
@@ -96,8 +97,9 @@ router.post("/signin", passport.authenticate('local'), function(req, res) {
 
 router.get('/signout', function(req, res){
   req.logout();
-  res.redirect('/');
 });
+
+router.get("/company/:id?", companyController.index);
 
 router.get("/employee/:id?", employeeController.index);
 

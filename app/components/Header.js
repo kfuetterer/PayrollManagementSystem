@@ -1,19 +1,27 @@
 import React, { Component } from "react";
 import { Link } from 'react-router';
+import API from "../utils/API";
+import { browserHistory } from 'react-router';
 
 class Header extends Component {
   constructor() {
     super();
     this.state = {
-      email: "",
+      email: "dfasjfdas",
       password: ""
     }
+  }
+  signOut() {
+      API.signOut().then((res) => {
+        this.setState({ email: "", password: "" });
+        browserHistory.push('/');
+      });
   }
   authenticated() {
     if (this.state.email) {
       return(
         <li>
-          <Link to="/api/signout" activeClassName="active">Sign Out</Link>
+          <Link activeClassName="active" onClick={this.signOut}>Sign Out</Link>
         </li>
       )
     } else if (!this.state.email) {
@@ -24,11 +32,6 @@ class Header extends Component {
       )
     }
   }
-  signOut() {
-      API.signOut().then((res) => {
-        this.setState({ email: "", password: "" });
-      })
-    }
   render() {
     return (
       <div className="navbar-fixed">

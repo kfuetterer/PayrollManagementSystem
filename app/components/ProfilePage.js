@@ -13,7 +13,8 @@ class ProfilePage extends Component {
         this.state = {
             schedules: [],
             timeoffsegments: [],
-            worksegments: []
+            worksegments: [],
+            company: []
         };
         this.getSchedule = this.getSchedule.bind(this);
         this.getTimeOffSegment = this.getTimeOffSegment.bind(this);
@@ -23,6 +24,12 @@ class ProfilePage extends Component {
         this.getSchedule();
         this.getTimeOffSegment();
         this.getWorkSegment();
+    }
+    getCompany() {
+      API.getCompany().then((res) => {
+        this.setState({ company: res.data });
+        console.log(this.state.company);
+      })
     }
     getSchedule() {
       API.getSchedule().then((res) => {
@@ -52,7 +59,10 @@ class ProfilePage extends Component {
               </div>
               <div className="row border">
                 <div className="col s12">
-                  <ClockIn />
+                  <ClockIn 
+                    company={this.state.company}
+                    getCompany={this.getCompany}
+                  />
                 </div>
               </div>
             </div>

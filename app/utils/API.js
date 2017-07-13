@@ -9,8 +9,11 @@ const API = {
     console.log(user);
     return axios.post("/api/signup", user);
   },
-  signOut: function() {
-    return axios.post("/api/signout");
+  signOut: function(user) {
+    return axios.post("/api/signout", user);
+  },
+  getCompany: function() {
+    return axios.get("/api/company");
   },
   getEmployee: function() {
     return axios.get("/api/employee");
