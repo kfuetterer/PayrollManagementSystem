@@ -10,13 +10,13 @@ class Header extends Component {
     }
   }
   authenticated() {
-    if (user) {
+    if (this.state.email) {
       return(
         <li>
           <Link to="/api/signout" activeClassName="active">Sign Out</Link>
         </li>
       )
-    } else if (!user) {
+    } else if (!this.state.email) {
       return(
         <li>
           <Link to="/signuppage" activeClassName="active">Sign Up</Link>

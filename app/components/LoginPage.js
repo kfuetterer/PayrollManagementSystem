@@ -56,11 +56,11 @@ class LoginPage extends Component {
                   />
                   <br />
                   <br />
-                    <button 
-                      onClick={this.handleButtonClick}
-                      className="btn btn-success light-blue accent-2 btn waves-effect waves-light" type="submit" name="action">Submit
-                      <i className="material-icons right">send</i>
-                    </button>
+                  <button 
+                    onClick={this.handleButtonClick}
+                    className="btn btn-success light-blue accent-2 btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i className="material-icons right">send</i>
+                  </button>
                 </div>
               </div>
             </div>

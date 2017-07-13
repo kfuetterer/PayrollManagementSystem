@@ -73,7 +73,8 @@ router.post("/signup", function(req, res, next){
             email: req.body.email,
             password: bCrypt.hashSync(req.body.password),
             pay_type: req.body.pay_type,
-            pay_rate: req.body.pay_rate
+            pay_rate: req.body.pay_rate,
+            companyId: req.body.companyId
         }).then(function(user){
             passport.authenticate("local", {failureRedirect:"/signup", successRedirect: "/signup"})(req, res, next)
         })

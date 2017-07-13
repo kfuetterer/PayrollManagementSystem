@@ -21,17 +21,17 @@ const API = {
   getPayrollcycle: function() {
     return axios.get("/api/payrollcycle");
   },
-  getSchedule: function() {
-    return axios.get("/api/schedule");
+  getSchedule: function(userid) {
+    return axios.get("/api/schedule", {userid});
   },
-  getTimeOffSegment: function() {
-    return axios.get("/api/timeoffsegment");
+  getTimeOffSegment: function(userid) {
+    return axios.get("/api/timeoffsegment", {userid});
   },
   saveTimeOffSegment: function(text) {
-    return axios.post("/api/timeoffsegment", { text });
+    return axios.post("/api/timeoffsegment", {text});
   },
-  getWorkSegment: function() {
-    return axios.get("api/worksegment");
+  getWorkSegment: function(userid) {
+    return axios.get("api/worksegment", {userid});
   },
   saveWorkSegment: function(id) {
     return axios.post("/api/worksegment/${id}");

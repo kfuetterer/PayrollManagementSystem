@@ -1,5 +1,5 @@
-const path = require('path')
-const webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   
@@ -12,7 +12,9 @@ module.exports = {
 
   // The plain compiled Javascript will be output into this file
   output: {
-    filename: "public/bundle.js"
+    path: path.join(__dirname, 'public'),
+    filename: 'bundle.js',
+    publicPath: '/public/'
   },
 
   plugins: [
