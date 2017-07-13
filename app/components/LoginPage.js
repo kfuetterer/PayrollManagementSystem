@@ -25,7 +25,7 @@ class LoginPage extends Component {
       console.log(res.data.id);
       this.setState({employeeId: res.data.id});
       if (res.data) {
-        browserHistory.push('/profile');
+        browserHistory.push('/profile?' + res.data.id);
       }
     });
   }
