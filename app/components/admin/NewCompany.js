@@ -20,7 +20,7 @@ class NewCompany extends React.Component {
     }
     API.saveCompany(newCompany).then((res) => {
       console.log(res);
-    })
+    });
   }
   render() {
     return (
