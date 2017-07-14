@@ -15,8 +15,7 @@ class SignUp extends Component {
             password: "",
             pay_type: "",
             pay_rate: "",
-            companyId: "",
-            employeeId: ""
+            companyId: ""
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleButtonClick = this.handleButtonClick.bind(this);
@@ -38,7 +37,6 @@ class SignUp extends Component {
         }
         API.signUp(newUser).then((res) => {
             console.log(res.data.id);
-            this.setState({employeeId: res.data.id});
             if (res.data) {
                 browserHistory.push('/profile/:' + res.data.id);
             }

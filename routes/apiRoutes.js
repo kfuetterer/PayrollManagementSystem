@@ -78,6 +78,7 @@ router.post("/signup", function(req, res, next){
             companyId: req.body.companyId
         }).then(function(user){
             passport.authenticate("local", {failureRedirect:"/signup", successRedirect: "/signup"})(req, res, next)
+            res.json(req.user);
         })
         } else {
             res.send("user exists");
