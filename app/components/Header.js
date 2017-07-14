@@ -13,19 +13,22 @@ class Header extends Component {
     }
   }
   signOut() {
-      API.signOut(this.state.employeeId).then((res) => {
+      API.signOut().then((res) => {
         this.setState({ email: "", password: "" });
         browserHistory.push('/');
       });
   }
+  componentDidUpdate() {
+    this.setState({employeeId: this.props.params.employeeId});
+  }
   authenticated() {
-    if (this.props.employeeId) {
+    if (this.state.employeeId) {
       return(
         <li>
           <Link activeClassName="active" onClick={this.signOut}>Sign Out</Link>
         </li>
       )
-    } else if (!this.props.employeeId) {
+    } else if (!this.state.employeeId) {
       return(
         <li>
           <Link to="/signuppage" activeClassName="active">Sign Up</Link>

@@ -15,12 +15,26 @@ class SignUp extends Component {
             password: "",
             pay_type: "",
             pay_rate: "",
-            companyId: ""
+            companyId: "",
+            admin: false
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleButtonClick = this.handleButtonClick.bind(this);
     }
-   handleInputChange (e) {
+    componentDidMount() {
+        $('.dropdown-button').dropdown({
+            inDuration: 300,
+            outDuration: 225,
+            constrainWidth: false,
+            hover: true,
+            gutter: 0,
+            belowOrigin: false,
+            alignment: 'left',
+            stopPropagation: false
+            }
+        );
+    }
+    handleInputChange (e) {
         this.setState({[e.target.name]: e.target.value});
     }
     handleButtonClick() {
@@ -33,7 +47,8 @@ class SignUp extends Component {
             password: this.state.password,
             pay_type: this.state.pay_type,
             pay_rate: this.state.pay_rate,
-            companyId: this.state.companyId
+            companyId: this.state.companyId,
+            admin: this.state.admin
         }
         API.signUp(newUser).then((res) => {
             console.log(res.data.id);
@@ -67,9 +82,14 @@ class SignUp extends Component {
                                 <label htmlFor="companyId">Company ID</label><br />
                                 <input type="text" value={this.state.companyId} name="companyId" onChange={this.handleInputChange} />
                                 <label htmlFor="pay_type">Pay Type</label><br />
-                                <input type="text" value={this.state.pay_type} name="pay_type" onChange={this.handleInputChange} />
+                                <a className='dropdown-button btn' href='#' data-activates='dropdown1'>Pay Type</a>
+                                <ul id='dropdown1' className='dropdown-content'>
+                                    <li onClick={this.handleInputChange} name="pay_type" value="Hourly">Hourly</li>
+                                    <li onClick={this.handleInputChange} name="pay_type" value="Salary">Salary</li>
+                                </ul>
                                 <label htmlFor="pay_rate">Pay Rate</label><br />
                                 <input type="text" value={this.state.pay_rate} name="pay_rate" onChange={this.handleInputChange} />
+                                <input type="checkbox" value={this.state.admin} name="admin" onChange={this.handleInputChange} />
                                 <button
                                     onClick={this.handleButtonClick}
                                     className="btn btn-success light-blue accent-2 btn waves-effect waves-light" type="submit" name="action">Submit

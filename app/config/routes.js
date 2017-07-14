@@ -12,6 +12,7 @@ const routes = (
       <IndexRoute component={LoginPage} />
       <Route path='signuppage' component={SignUp} />
       <Route path='profile/:employeeId' component={ProfilePage} />
+      <Route path='admin' component={AdminPage} />
     </Route>
   </Router>
 );

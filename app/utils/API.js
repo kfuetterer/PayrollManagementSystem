@@ -7,8 +7,8 @@ const API = {
   signUp: function(user) {
     return axios.post("/api/signup", user);
   },
-  signOut: function(user) {
-    return axios.post("/api/signout", user);
+  signOut: function() {
+    return axios.get("/api/signout");
   },
   getCompany: function(companyid) {
     return axios.get("/api/company/:" + companyid);

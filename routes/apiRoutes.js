@@ -58,6 +58,27 @@ router.use(function(req,res,next){
     next()
 });
 
+function requireAdmin() {
+  return function(req, res, next) {
+    db.Employee.findOne({
+        where: {
+            email: req.body.email
+        }
+    }).then(function(err, user, cb) {
+      if (err) { return next(err); }
+
+      if (!user) {        
+          return cb(null, false); 
+      }
+
+      if (!user.admin) { 
+          return cb(null, false); 
+      }
+      next();
+    });
+  }
+}
+
 router.post("/signup", function(req, res, next){
     db.Employee.findOne({
         where: {
@@ -77,8 +98,9 @@ router.post("/signup", function(req, res, next){
             pay_rate: req.body.pay_rate,
             companyId: req.body.companyId
         }).then(function(user){
-            passport.authenticate("local", {failureRedirect:"/signup", successRedirect: "/signup"})(req, res, next)
-            res.json(req.user);
+            passport.authenticate("local", function(req, res) {
+                res.json(req.user);
+            });
         })
         } else {
             res.send("user exists");
@@ -91,7 +113,7 @@ router.get("/signup", function(req, res){
     res.json(req.user);
 });
 
-router.post("/signin", passport.authenticate('local'), function(req, res) {
+router.post("/signin", requireAdmin(), passport.authenticate('local'), function(req, res) {
     console.log("Succesfully signed in.");
     res.json(req.user);
 });
