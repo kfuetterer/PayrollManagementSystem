@@ -4,7 +4,8 @@
   "description": "Application for payroll management",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -53,6 +54,7 @@
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
     "webpack": "^1.15.0",
+    "webpack-config": "^7.0.0",
     "webpack-dev-middleware": "^1.11.0",
     "webpack-hot-middleware": "^2.18.2"
   }
