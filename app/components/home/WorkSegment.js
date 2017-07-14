@@ -2,6 +2,21 @@ import { Link } from 'react-router';
 import React, { Component } from "react";
 
 class WorkSegment extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      hidden : "hidden"
+    };
+  }
+  componentWillMount() {
+    var that = this;
+    setTimeout(function() {
+      that.show();
+    }, that.props.wait);
+  }
+  show() {
+    this.setState({hidden : ""});
+  }
   render() {
     return (
       <div>
@@ -21,11 +36,11 @@ class WorkSegment extends React.Component {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  {/*<td>{this.props.worksegments.clock_in}</td>*/}
-                  {/*<td>{this.props.worksegments.clock_out}</td>*/}
-                  {/*<td>{this.props.worksegments.clock_out - this.props.worksegment.clock_in}</td>*/}
-                </tr>
+                {/*<tr>
+                  <td>{this.props.worksegments[0].clock_in}</td>
+                  <td>{this.props.worksegments[0].clock_out}</td>
+                  <td>{this.props.worksegments[0].clock_out - this.props.worksegment[0].clock_in}</td>
+                </tr>*/}
               </tbody>
             </table>
             <p className="right-align">

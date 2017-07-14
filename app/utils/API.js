@@ -12,35 +12,35 @@ const API = {
   signOut: function(user) {
     return axios.post("/api/signout", user);
   },
-  getCompany: function() {
-    return axios.get("/api/company");
+  getCompany: function(companyid) {
+    return axios.get("/api/company/:" + companyid);
   },
-  getEmployee: function() {
-    return axios.get("/api/employee");
+  getEmployee: function(id) {
+    return axios.get("/api/employee/" + id);
   },
   saveEmployee: function(employee) {
-    return axios.get("/api/employee", {employee});
+    return axios.get("/api/employee", employee);
   },
   getPayrollcycle: function() {
     return axios.get("/api/payrollcycle");
   },
-  getSchedule: function(userid) {
-    return axios.get("/api/schedule", {userid});
+  getSchedule: function(id) {
+    return axios.get("/api/schedule/" + id);
   },
-  getTimeOffSegment: function(userid) {
-    return axios.get("/api/timeoffsegment", {userid});
+  getTimeOffSegment: function(id) {
+    return axios.get("/api/timeoffsegment/" + id);
   },
   saveTimeOffSegment: function(text) {
-    return axios.post("/api/timeoffsegment", {text});
+    return axios.post("/api/timeoffsegment", text);
   },
-  getWorkSegment: function(userid) {
-    return axios.get("api/worksegment", {userid});
+  getWorkSegment: function(id) {
+    return axios.get("/api/worksegment/" + id);
   },
-  saveWorkSegment: function(id) {
-    return axios.post("/api/worksegment/${id}");
+  saveWorkSegment: function(worksegment) {
+    return axios.post("/api/worksegment/", worksegment);
   },
-  updateWorkSegment: function (id) {
-    return axios.update("/api/worksegment/${id}");
+  updateWorkSegment: function (id, worksegment) {
+    return axios.patch("/api/worksegment/" + id, worksegment);
   }
 };
 

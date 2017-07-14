@@ -7,8 +7,7 @@ class LoginPage extends Component {
     super();
     this.state = {
       email: "",
-      password: "",
-      employeeId: ""
+      password: ""
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleButtonClick = this.handleButtonClick.bind(this);
@@ -23,9 +22,8 @@ class LoginPage extends Component {
     }
     API.signIn(user).then((res) => {
       console.log(res.data.id);
-      this.setState({employeeId: res.data.id});
       if (res.data) {
-        browserHistory.push('/profile?' + res.data.id);
+        browserHistory.push('/profile/:' + res.data.id);
       }
     });
   }

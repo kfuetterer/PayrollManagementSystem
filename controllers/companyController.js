@@ -10,9 +10,8 @@ module.exports = {
     else {
       query = req.params.id ? { id: req.params.id } : {};
     }
-    db.Company.find(query, {
-        companyId: req.body.companyId
-    }).then(function(doc) {
+    db.Company.find(query)
+    .then(function(doc) {
         res.json(doc);
       }).catch(function(err) {
         res.json(err);

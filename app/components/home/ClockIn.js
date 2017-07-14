@@ -11,8 +11,8 @@ class ClockIn extends React.Component {
     date = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
 
     this.state = {
-      clock_in: "",
-      clock_out: "",
+      clock_in: new Date(),
+      clock_out: new Date(),
       date: date
     };
     this.handleButtonClickIn = this.handleButtonClickIn.bind(this);
@@ -20,13 +20,19 @@ class ClockIn extends React.Component {
   }
   handleButtonClickIn() {
     this.setState({ clock_in: new Date() });
-    const newWorkSegmentIn = this.state.clock_in;
+    console.log(this.state.clock_in);
+    const newWorkSegmentIn = {
+      clock_in: this.state.clock_in,
+      employeeId: this.props.employeeId
+    }
     API.saveWorkSegment(newWorkSegmentIn).then(this.props.getWorkSegment);
   }
   handleButtonClickOut() {
     this.setState({ clock_out: new Date() });
-    const newWorkSegmentOut = this.state.clock_out;
-    API.updateWorkSegment(newWorkSegmentOut).then(this.props.getWorkSegment);
+    const newWorkSegmentOut = {
+      clock_out: this.state.clock_out
+    }
+    API.updateWorkSegment(this.props.currentWorkId, newWorkSegmentOut).then(this.props.getWorkSegment);
     this.setState({ clock_in: "", clock_out: "" });
   }
   render() {

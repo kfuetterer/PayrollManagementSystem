@@ -3,31 +3,19 @@ var db = require("../models");
 
 module.exports = {
   index: function(req, res) {
-    var query;
-    if (req.query) {
-      query = req.query;
-    }
-    else {
-      query = req.params.id ? { id: req.params.id } : {};
-    }
-    db.Timeoffsegment.find(query)
-      .then(function(doc) {
+    db.Timeoffsegment.findAll({ 
+      where: {
+        employeeId: req.params.id
+      }
+    }).then(function(doc) {
         res.json(doc);
       }).catch(function(err) {
         res.json(err);
       });
   },
   create: function(req, res) {
-    db.Timeoffsegment.create({
-      start_date: req.body.start_date,
-      end_date: req.body.end_date,
-      hoursperday: req.body.hoursperday,
-      notes: req.body.notes,
-      include_weekend: req.body.include_weekend,
-      include_holidays: req.body.include_holidays,
-      approved: req.body.approved,
-      employeeId: req.body.employeeId
-    }).then(function(doc) {
+    db.Timeoffsegment.create(req.body)
+    .then(function(doc) {
       res.json(doc);
     }).catch(function(err) {
       res.json(err);

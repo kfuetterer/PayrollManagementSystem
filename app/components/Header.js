@@ -7,24 +7,25 @@ class Header extends Component {
   constructor() {
     super();
     this.state = {
+      employeeId: "",
       email: "dfasjfdas",
       password: ""
     }
   }
   signOut() {
-      API.signOut().then((res) => {
+      API.signOut(this.state.employeeId).then((res) => {
         this.setState({ email: "", password: "" });
         browserHistory.push('/');
       });
   }
   authenticated() {
-    if (this.state.email) {
+    if (this.props.employeeId) {
       return(
         <li>
           <Link activeClassName="active" onClick={this.signOut}>Sign Out</Link>
         </li>
       )
-    } else if (!this.state.email) {
+    } else if (!this.props.employeeId) {
       return(
         <li>
           <Link to="/signuppage" activeClassName="active">Sign Up</Link>

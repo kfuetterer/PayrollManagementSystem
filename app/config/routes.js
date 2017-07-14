@@ -11,7 +11,7 @@ const routes = (
     <Route path='/' component={MasterPage}>
       <IndexRoute component={LoginPage} />
       <Route path='signuppage' component={SignUp} />
-      <Route path='profile' component={ProfilePage} />
+      <Route path='profile/:employeeId' component={ProfilePage} />
     </Route>
   </Router>
 );

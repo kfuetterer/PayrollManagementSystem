@@ -12,8 +12,7 @@ class TimeOffForm extends React.Component {
       notes: "",
       include_weekend: false,
       include_holidays: false,
-      approved: "",
-      employeeId: ""
+      approved: ""
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleButtonClick = this.handleButtonClick.bind(this);
@@ -35,7 +34,8 @@ class TimeOffForm extends React.Component {
       notes: this.state.notes,
       include_weekend: this.state.include_weekend,
       include_holidays: this.state.include_holidays,
-      approved: this.state.approved
+      approved: this.state.approved,
+      employeeId: this.props.employeeId
     }
     API.saveTimeOffSegment(newTimeOffSegment).then(this.props.getTimeOffSegment)
   }

@@ -2,8 +2,29 @@ import { Link } from "react-router";
 import React, { Component } from "react";
 
 class TimeOffSegment extends React.Component {
-  componentDidMount() {
-      $('#calendar1').fullCalendar({
+  constructor() {
+    super();
+    this.state = {
+      hidden : "hidden"
+    };
+  }
+  componentWillMount() {
+    var that = this;
+    setTimeout(function() {
+      that.show();
+    }, that.props.wait);
+  }
+  show() {
+    this.setState({hidden : ""});
+    let events = [];
+    for (var j; j < this.props.timeoffsegments.length; j++) {
+      events.push({
+        title: '',
+        start: this.props.timeoffsegments[j].start_date,
+        end: this.props.timeoffsegments[j].end_date
+      });
+    }
+    $('#calendar1').fullCalendar({
         editable: false,
         handleWindowResize: true,
         weekends: true,
@@ -19,20 +40,9 @@ class TimeOffSegment extends React.Component {
         },
         color: '#ffff00',
         textColor: '#ffffff',
-        displayEventTime: true,
+        displayEventTime: false,
         aspectRatio: 1.2,
-        events: [
-          {
-            title  : 'Vacation',
-            start  : '2017-07-09', //this.props.timeoffsegments.start_date
-            end: '2017-07-13' //this.props.timeoffsegments.end_date
-          },
-          {
-            title  : 'Vacation',
-            start  : '2017-08-09', //this.props.timeoffsegments.start_date
-            end: '2017-08-21' //this.props.timeoffsegments.end_date
-          }
-        ]
+        events: events
     });
     $('.fc-next-button').addClass("marginCSS floatclass btn-floating btn light-blue accent-2 waves-effect waves-light");
     $('.fc-prev-button').addClass("marginCSS floatclass btn-floating btn light-blue accent-2 waves-effect waves-light");

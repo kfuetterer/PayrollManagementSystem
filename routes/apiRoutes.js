@@ -112,6 +112,6 @@ router.post("/timeoffsegment", timeoffsegmentController.create);
 
 router.get("/worksegment/:id?", worksegmentController.index);
 router.post("/worksegment", worksegmentController.create);
-router.patch("/worksegment/:id", worksegmentController.update);
+router.patch("/worksegment/:id?", worksegmentController.update);
 
 module.exports = router;
