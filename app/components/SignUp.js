@@ -89,7 +89,14 @@ class SignUp extends Component {
                                 </ul>
                                 <label htmlFor="pay_rate">Pay Rate</label><br />
                                 <input type="text" value={this.state.pay_rate} name="pay_rate" onChange={this.handleInputChange} />
-                                <input type="checkbox" value={this.state.admin} name="admin" onChange={this.handleInputChange} />
+                                <input
+                                    name="admin"
+                                    type="checkbox" id="admin"
+                                    onChange={this.handleInputChange}
+                                />
+                                <label htmlFor="admin">Admin</label>
+                                <br />
+                                <br />
                                 <button
                                     onClick={this.handleButtonClick}
                                     className="btn btn-success light-blue accent-2 btn waves-effect waves-light" type="submit" name="action">Submit
