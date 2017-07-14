@@ -1,14 +1,10 @@
 {
   "name": "payrollmanagementsystem",
   "version": "1.0.0",
-  "engines": {
-    "node": "6.11.1"
-  },
   "description": "Application for payroll management",
   "main": "server.js",
   "scripts": {
-    "build": "webpack --config ./webpack.prod.config.js",
-    "start": "npm run build && SET NODE_ENV=production node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

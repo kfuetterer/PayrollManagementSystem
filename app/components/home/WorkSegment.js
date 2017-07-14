@@ -16,6 +16,15 @@ class WorkSegment extends React.Component {
   }
   show() {
     this.setState({hidden : ""});
+    for (var k = 0; k < this.props.worksegments.length; k++) {
+      return (
+        <tr>
+          <td>{this.props.worksegments[k].clock_in}</td>
+          <td>{this.props.worksegments[k].clock_out}</td>
+          <td></td>
+        </tr>
+      )
+    }
   }
   render() {
     return (
@@ -36,11 +45,7 @@ class WorkSegment extends React.Component {
                 </tr>
               </thead>
               <tbody>
-                {/*<tr>
-                  <td>{this.props.worksegments[0].clock_in}</td>
-                  <td>{this.props.worksegments[0].clock_out}</td>
-                  <td>{this.props.worksegments[0].clock_out - this.props.worksegment[0].clock_in}</td>
-                </tr>*/}
+                {this.show}
               </tbody>
             </table>
             <p className="right-align">
