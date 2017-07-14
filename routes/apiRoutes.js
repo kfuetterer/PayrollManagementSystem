@@ -58,29 +58,29 @@ router.use(function(req,res,next){
     next()
 });
 
-function requireAdmin() {
-    return function(req, res, next) {
-        db.Employee.findOne({
-            where: {
-                email: req.body.email
-            }
-        }).then(function(err, user, cb) {
-            if (err) { 
-                return next(err); 
-            }
-            if (!user) {        
-                return cb(null, false); 
-            }
-            if (!user.admin) { 
-                passport.authenticate('local'), function(req, res) {
-                    console.log("Succesfully signed in.");
-                    res.json(req.user);
-                };
-            }
-            next();
-        });
-    }
-}
+// function requireAdmin() {
+//     return function(req, res, next) {
+//         db.Employee.findOne({
+//             where: {
+//                 email: req.body.email
+//             }
+//         }).then(function(err, user, cb) {
+//             if (err) { 
+//                 return next(err); 
+//             }
+//             if (!user) {        
+//                 return cb(null, false); 
+//             }
+//             if (!user.admin) { 
+//                 passport.authenticate('local'), function(req, res) {
+//                     console.log("Succesfully signed in.");
+//                     res.json(req.user);
+//                 };
+//             }
+//             next();
+//         });
+//     }
+// }
 
 router.post("/signup", function(req, res, next){
     db.Employee.findOne({
@@ -116,7 +116,7 @@ router.get("/signup", function(req, res){
     res.json(req.user);
 });
 
-router.post("/signin", requireAdmin(), passport.authenticate('local'), function(req, res) {
+router.post("/signin", passport.authenticate('local'), function(req, res) {
     console.log("Succesfully signed in.");
     res.json(req.user);
 });
