@@ -17,13 +17,16 @@ class TimeOffSegment extends React.Component {
   show() {
     this.setState({hidden : ""});
     let events = [];
-    for (var j; j < this.props.timeoffsegments.length; j++) {
+    for (let j = 0; j < this.props.timeoffsegments.length; j++) {
       events.push({
         title: '',
         start: this.props.timeoffsegments[j].start_date,
         end: this.props.timeoffsegments[j].end_date
       });
     }
+
+    this.forceUpdate();
+
     $('#calendar1').fullCalendar({
         editable: false,
         handleWindowResize: true,

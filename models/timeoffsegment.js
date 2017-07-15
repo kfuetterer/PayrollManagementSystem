@@ -1,12 +1,11 @@
 module.exports = function(sequelize, DataTypes) {
   var Timeoffsegment = sequelize.define("Timeoffsegment", {
-    start_date: DataTypes.DATE,
-    end_date: DataTypes.DATE,
+    start_date: DataTypes.STRING,
+    end_date: DataTypes.STRING,
     hoursperday: DataTypes.INTEGER,
     notes: DataTypes.STRING,
     include_weekend: DataTypes.BOOLEAN,
     include_holidays: DataTypes.BOOLEAN,
-    approved: DataTypes.BOOLEAN,
     employeeId: DataTypes.INTEGER
   },
    {

@@ -17,15 +17,17 @@ class Schedule extends React.Component {
   show() {
     this.setState({hidden : ""});
     console.log(this.props.schedules[0].start_date);
+    console.log(this.props.schedules[0].end_date);
     console.log(this.props.schedules.length);
     let events = [];
 
-    for (var j; j < this.props.schedules.length; j++) {
+    for (let ll = 0; ll < this.props.schedules.length; ll++) {
       events.push({
         title: '',
-        start: this.props.schedules[j].start_date,
-        end: this.props.schedules[j].end_date
+        start: this.props.schedules[ll].start_date,
+        end: this.props.schedules[ll].end_date
       });
+      console.log(this.props.schedules[ll].start_date);
     };
 
     this.forceUpdate();

@@ -15,7 +15,7 @@ class AdminPage extends Component {
               </div>
               <div className="row border">
                 <div className="col s12">
-                  <CNewCompany
+                  <NewCompany
                   />
                 </div>
               </div>

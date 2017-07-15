@@ -15,8 +15,7 @@ class SignUp extends Component {
             password: "",
             pay_type: "",
             pay_rate: "",
-            companyId: "",
-            admin: false
+            companyId: ""
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleButtonClick = this.handleButtonClick.bind(this);
@@ -47,8 +46,7 @@ class SignUp extends Component {
             password: this.state.password,
             pay_type: this.state.pay_type,
             pay_rate: this.state.pay_rate,
-            companyId: this.state.companyId,
-            admin: this.state.admin
+            companyId: this.state.companyId
         }
         API.signUp(newUser).then((res) => {
             console.log(res.data.id);
@@ -89,12 +87,12 @@ class SignUp extends Component {
                                 </ul>
                                 <label htmlFor="pay_rate">Pay Rate</label><br />
                                 <input type="text" value={this.state.pay_rate} name="pay_rate" onChange={this.handleInputChange} />
-                                <input
+                                {/*<input
                                     name="admin"
                                     type="checkbox" id="admin"
                                     onChange={this.handleInputChange}
                                 />
-                                <label htmlFor="admin">Admin</label>
+                                <label htmlFor="admin">Admin</label>*/}
                                 <br />
                                 <br />
                                 <button

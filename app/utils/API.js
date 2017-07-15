@@ -28,8 +28,8 @@ const API = {
   getTimeOffSegment: function(id) {
     return axios.get("/api/timeoffsegment/" + id);
   },
-  saveTimeOffSegment: function(text) {
-    return axios.post("/api/timeoffsegment", text);
+  saveTimeOffSegment: function(timeoffsegment) {
+    return axios.post("/api/timeoffsegment", timeoffsegment);
   },
   getWorkSegment: function(id) {
     return axios.get("/api/worksegment/" + id);

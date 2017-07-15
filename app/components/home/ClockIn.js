@@ -62,7 +62,7 @@ class ClockIn extends React.Component {
           </div>
           <div className="col s6 m6">
             <p>Current Time:</p>
-            <p><Clock /></p>
+            <Clock />
           </div>
         </div>
         <div className="row">

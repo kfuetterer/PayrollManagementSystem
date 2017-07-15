@@ -8,8 +8,7 @@ module.exports = function(sequelize, DataTypes) {
     password: DataTypes.STRING,
     pay_type: DataTypes.STRING,
     pay_rate: DataTypes.DECIMAL,
-    companyId: DataTypes.INTEGER,
-    admin: DataTypes.BOOLEAN
+    companyId: DataTypes.INTEGER
   },
     {
       classMethods: {

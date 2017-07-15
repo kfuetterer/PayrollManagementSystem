@@ -3,7 +3,7 @@
         "username": "root",
         "password": "203980Kj",
         "database": "payrollmanagement_db",
-        "host": "mysql://hth3le6w84bleghb:ty6nos4vtht4xrkg@bmsyhziszmhf61g1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/zt6njnfpmeou6043",
+        "host": "localhost",
         "dialect": "mysql"
     },
     "test": {
